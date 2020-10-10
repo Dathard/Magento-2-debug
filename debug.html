@@ -1,0 +1,424 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Magento 2 debug</title>
+    <meta name="description" content="Magento 2 debug">
+    <style>
+        body{
+            background: #fafafb;
+            color: #565656;
+            font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+        }
+        .code{
+            width: 100%;
+            background: #f8f7f2;
+            border-radius: 5px;
+            padding: 12px;
+            width: 90%;
+            color: #565656;
+        }
+        .code.copy{
+            cursor: pointer;
+        }
+        code {
+            word-spacing: -4px;
+        }
+        .code textarea{
+            display: none;
+        }
+        h2{
+            font-size: 1.5rem;
+            line-height: 1.35;
+            font-weight: normal;
+            margin-bottom: 0;
+            margin: 0;
+        }
+        body>.container{
+            width: 100%;
+            background: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        .left-sidebar{
+            width: 164px;
+        }
+        #content{
+            width: calc(100% - 164px);
+            border-left: 1px solid #8c8b8e;
+            min-height: 100vh;
+            padding: 15px;
+        }
+        #content > .section{
+            background: #fff;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #f2f2f2;
+            border-radius: 3px;
+        }
+        .section .header{
+            border-bottom: 1px solid #e4e6e8;
+        }
+        .underline{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="left-sidebar" class="left-sidebar">
+            <div class="navigation">
+                Менюшка
+            </div>
+        </div>
+        <div id="content">
+            <div class="section">
+                <div class="header">
+                    <h2>Рекомендації</h2>
+                </div>
+                <div class="body">
+                    <p class="underline">Використовуйте echo and var_dump()</p>
+                    <ul>
+                        <li>
+                            <p>Якщо ви хочете дізнатись вміст деякого змінної то використовуйте</p>
+                            <div class="code copy" onclick="copytext(this)">
+                                <code>
+                                    <span>
+                                        <span style="color: #0000BB">var_dump</span>
+                                        <span style="color: #007700">(</span>
+                                        <span style="color: #0000BB">$array</span>
+                                        <span style="color: #007700">);</span>
+                                        <span style="color: #0000BB">exit</span>
+                                        <span style="color: #007700">();</span>
+                                    </span>
+                                </code>
+                                <textarea class="code">var_dump($array);exit();</textarea>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Якщо ви хочете вивести об`єкт</p>
+                            <div class="code copy" onclick="copytext(this)">
+                                <code>
+                                    <span>
+                                        <span style="color: #0000BB">var_dump</span>
+                                        <span style="color: #007700">(</span>
+                                        <span style="color: #0000BB">$product</span>
+                                        <span style="color: #007700">-></span>
+                                        <span style="color: #0000BB">debug</span>
+                                        <span style="color: #007700">(</span>
+                                        <span style="color: #007700">)</span>
+                                        <span style="color: #007700">);</span>
+                                        <span style="color: #0000BB">exit</span>
+                                        <span style="color: #007700">();</span>
+                                    </span>
+                                </code>
+                                <textarea class="code">var_dump($product->debug());exit();</textarea>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Якщо хочете дізнатись sql-запит з колекції:</p>
+                            <div class="code copy" onclick="copytext(this)">
+                                <code>
+                                    <span>
+                                        <span style="color: #0000BB">echo $collection</span>
+                                        <span style="color: #007700">-></span>
+                                        <span style="color: #0000BB">getSelect</span>
+                                        <span style="color: #007700">();</span>
+                                        <span style="color: #0000BB">exit</span>
+                                        <span style="color: #007700">();</span>
+                                    </span>
+                                </code>
+                                <textarea class="code">echo $collection->getSelect();exit();</textarea>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>Перед тим як потрібно дебажити потрібно знайти місце(так мовити вхідну точку) звідки це почати. Найкращий варіант це помилка(php, або js в консолі). Якщо помилки не має то потрібно перевірити чи включений вивід помилок і вам потрібно дізнатись в якому mode
+                        <a href="https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/magento-modes.html" target="_blank">(About Magento modes)</a> на даний момент magento.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="header">
+                    <h2>Корисні php команди для debug</h2>
+                </div>
+                <div class="body">
+                    <ul>
+                        <li>
+                            <p><b>exit() or die()</b> - зупиняє подальше виконання скрипта</p>
+                        </li>
+                        <li>
+                            <p><b>get_class()</b> - повертає ім’я класу даного об’єкта</p>
+                        </li>
+                        <li>
+                            <p><b>gettype()</b> - повертає тип змінної</p>
+                        </li>
+                        <li>
+                            <p><b>is_*</b> - для конкретної провірки типа</p>
+                        </li>
+                        <li>
+                            <p><b>file_put_contents()</b> - використовуємо як логування даних</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="header">
+                    <h2>Визначення версії Magento 2</h2>
+                </div>
+                <div class="body">
+                    <p>Є кілька способів дізнатись версію Magento:</p>
+                    <ul>
+                        <li>
+                            <p>В footer адмінки</p>
+                        </li>
+                        <li>
+                            <p>За допомогою Magento CLI</p>
+                            <div class="code copy" onclick="copytext(this)">
+                                <code>
+                                    <span>
+                                        <span>php bin/magento</span>
+                                        <span style="color: #0000BB">--version</span>
+                                    </span>
+                                </code>
+                                <textarea class="code">php bin/magento --version</textarea>
+                            </div>
+                        </li>
+                        <li>
+                            <p>За допомогою URL-адреси</p>
+                            <div class="code">
+                                <code>
+                                    <span>
+                                        <span>http://<magento2-store>/magento_version</span>
+                                    </span>
+                                </code>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="header">
+                    <h2>Як отримати доступ до адмінки</h2>
+                </div>
+                <div class="body">
+                    <p>Якщо у вас не має доступу до адмінки то ви можете створити собі нового користувача за допомогою Magento CLI</p>
+                    <div class="code copy" onclick="copytext(this)">
+                        <code>
+                            <span>
+                                <span>php bin/magento admin:user:create</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-user</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-password</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root_password"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-email</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root@gmail.com"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-firstname</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-lastname</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root"</span>
+                            </span>
+                        </code>
+                        <textarea class="code">php 22222222 bin/magento admin:user:create --admin-user="plumrocket" --admin-password="developer7" --admin-email="mishel.plumrocket@gmail.com" --admin-firstname="mishel" --admin-lastname="plumrocket"</textarea>
+                    </div>
+                    <p>Або зламати доступ за допогомою ftp. Для цього слід внести правки в файлі <b>/vendor/magento/module-user/Model/User.php</b>.</p>
+                    <div class="code">
+                        <code>
+                            <span>
+                                <span style="color: #007700">public function</span>
+                                <span style="color: #0000BB">authenticate</span>
+                                <span style="color: #007700">(</span>
+                                <span style="color: #0000BB">$username</span>
+                                <span style="color: #007700">,</span>
+                                <span style="color: #0000BB">$password</span>
+                                <span style="color: #007700">)<br>{</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #007700">...</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">$this</span>
+                                <span style="color: #007700">-></span>
+                                <span style="color: #0000BB">loadByUsername</span>
+                                <span style="color: #007700">(</span>
+                                <span style="color: #0000BB">$username</span>
+                                <span style="color: #007700">);</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">$this</span>
+                                <span style="color: #007700">-></span>
+                                <span style="color: #0000BB">load</span>
+                                <span style="color: #007700">(</span>
+                                <span style="color: #0000BB">1</span>
+                                <span style="color: #007700">);</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">$sensitive</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #0000BB">$config</span>
+                                <span style="color: #007700"> ? </span>
+                                <span style="color: #0000BB">$username</span>
+                                <span style="color: #007700"> == </span>
+                                <span style="color: #0000BB">$this</span>
+                                <span style="color: #007700">-></span>
+                                <span style="color: #0000BB">getUsername</span>
+                                <span style="color: #007700">() : </span>
+                                <span style="color: #0000BB">true</span>
+                                <span style="color: #007700">;</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #007700">if (</span>
+                                <span style="color: #0000BB">$sensitive</span>
+                                <span style="color: #007700">&&</span>
+                                <span style="color: #0000BB">$this</span>
+                                <span style="color: #007700">-></span>
+                                <span style="color: #0000BB">getId</span>
+                                <span style="color: #007700">() ) {</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">$result</span>
+                                <span style="color: #007700"> = </span>
+                                <span style="color: #0000BB">$this</span>
+                                <span style="color: #007700">-></span>
+                                <span style="color: #0000BB">verifyIdentity</span>
+                                <span style="color: #007700">(</span>
+                                <span style="color: #0000BB">$password</span>
+                                <span style="color: #007700">);</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">$result</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #0000BB">true</span>
+                                <span style="color: #007700">;</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #007700">}</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #007700">...</span>
+                                <br>
+                                <span style="color: #007700">}</span>
+                            </span>
+                        </code>
+                    </div>
+                    <p>Після входу завжди відкатайте свої зміни(ніколи не залишайте їх, це дуже небезпечно)</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="header">
+                    <h2>Основні файли конфігурації</h2>
+                </div>
+                <div class="body">
+                    <ul>
+                        <li>
+                            <p><b>app/etc/env.php</b> - містить налаштування, специфічні для середовища встановлення(шлях до адмінки, доступи до DB та іншу ін-фу про різні підключені сервіси, наприклад системи кешування(redis, varnish))</p>
+                        </li>
+                        <li>
+                            <p><b>app/etc/config.php</b>- містить перелік встановлених модулів, тем та мовних пакетів; і спільні настройки конфігурації. Детальніше про даний файл можна глянути за
+                                <a href="https://devdocs.magento.com/guides/v2.3/config-guide/config/config-php.html"  target="_blank">цим посиланням</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="header">
+                    <h2>Вивід layout усієї сторінки</h2>
+                </div>
+                 <div class="body">
+                     <p>У файлі <b>vendor/magento/framework/View/Layout.php</b> методі <b>generateXml()</b> вставте:</p>
+                     <div class="code copy" onclick="copytext(this)">
+                         <code>
+                             <span>
+                                 <span style="color: #007700">if ( </span>
+                                 <span style="color: #0000BB">isset</span>
+                                 <span style="color: #007700">(</span>
+                                 <span style="color: #0000BB">$_GET</span>
+                                 <span style="color: #007700">[</span>
+                                 <span style="color: #DD0000">"getLayouts"</span>
+                                 <span style="color: #007700">]) ){</span>
+                                 <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span style="color: #0000BB">echo</span>
+                                 <span style="color: #007700">(</span>
+                                 <span style="color: #0000BB">$xml</span>
+                                 <span style="color: #007700">-></span>
+                                 <span style="color: #0000BB">asXML</span>
+                                 <span style="color: #007700">()); </span>
+                                 <span style="color: #0000BB">die</span>
+                                 <span style="color: #007700">;</span>
+                                 <br>
+                                 <span style="color: #007700">}</span>
+                             </span>
+                         </code>
+                         <textarea class="code">if ( isset($_GET["getLayouts"]) ){
+    echo($xml->asXML()); die;
+}</textarea>
+                     </div>
+                 </div>
+            </div>
+            <div class="section">
+                <div class="header">
+                    <h2>Вивід template path hints</h2>
+                </div>
+                <div class="body">
+                     <p>Є кілька способів вивести template path hints в Magento:</p>
+                    <ul>
+                        <li>
+                            <p>З допомогою панелі адміністратора. Для цього потрібно перейти за шляхом <b>Stores->Settings->Configuration->Advanced->Developer->Debug</b>.</p>
+                        </li>
+                        <li>
+                            <p>Через ftp. Для цього слід внести правки в функцію <b>afterCreate()</b> в файлі <b>vendor/magento/module-developer/Model/TemplateEngine/Plugin/DebugHints.php</b>.</p>
+                            <div class="code copy" onclick="copytext(this)">
+                                <code>
+                                    <span>
+                                        <span style="color: #007700">if ( </span>
+                                        <span style="color: #0000BB">isset</span>
+                                        <span style="color: #007700">(</span>
+                                        <span style="color: #0000BB">$_GET</span>
+                                        <span style="color: #007700">[</span>
+                                        <span style="color: #DD0000">"templatehints"</span>
+                                        <span style="color: #007700">]) ){</span>
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span style="color: #007700">return </span>
+                                        <span style="color: #0000BB">$this</span>
+                                        <span style="color: #007700">-></span>
+                                        <span style="color: #0000BB">debugHintsFactory</span>
+                                        <span style="color: #007700">-></span>
+                                        <span style="color: #0000BB">create</span>
+                                        <span style="color: #007700">([</span>
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span style="color: #DD0000">"subject"</span>
+                                        <span style="color: #007700"> => </span>
+                                        <span style="color: #0000BB">$invocationResult</span>
+                                        <span style="color: #007700">,</span>
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span style="color: #DD0000">"showBlockHints"</span>
+                                        <span style="color: #007700"> => </span>
+                                        <span style="color: #0000BB">1</span>
+                                        <span style="color: #007700"> ]);</span>
+                                        <br>
+                                        <span style="color: #007700">}</span>
+                                    </span>
+                                </code>
+                                <textarea class="code">if( isset($_GET["templatehints"]) ){
+    return $this->debugHintsFactory->create([
+        "subject" => $invocationResult,
+        "showBlockHints" => 1 ]);
+}</textarea>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+        function copytext(el) {
+            var $tmp = $("<textarea>");
+            $("body").append($tmp);
+            $tmp.val($(el).find('textarea.code:first').val()).select();
+            document.execCommand("copy");
+            $tmp.remove();
+        }
+    </script>
+</body>
+</html>
