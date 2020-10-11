@@ -4,61 +4,149 @@
     <title>Magento 2 debug</title>
     <meta name="description" content="Magento 2 debug">
     <style>
-        body{
+        body
+        {
+            font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+
+            color: #565656;
             background: #fafafb;
-            color: #565656;
-            font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
         }
-        .code{
+        .code
+        {
             width: 100%;
-            background: #f8f7f2;
-            border-radius: 5px;
-            padding: 12px;
             width: 90%;
+            padding: 12px;
+
             color: #565656;
+            border-radius: 5px;
+            background: #f8f7f2;
         }
-        .code.copy{
+        .code.copy
+        {
+            position: relative;
+
+            display: inline-block;
+
             cursor: pointer;
         }
-        code {
+        .code.copy:hover:after
+        {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+
+            position: absolute;
+            z-index: 1;
+            top: 12px;
+            right: 12px;
+
+            padding: 5px 10px;
+
+            content: 'Копіювати код';
+
+            border: 1px solid #e4e6e8;
+            border-radius: 5px;
+            background: rgba(255,255,230,.9);
+        }
+        code
+        {
             word-spacing: -4px;
         }
-        .code textarea{
+        .code textarea
+        {
             display: none;
         }
-        h2{
+        h2
+        {
             font-size: 1.5rem;
-            line-height: 1.35;
             font-weight: normal;
-            margin-bottom: 0;
+            line-height: 1.35;
+
             margin: 0;
+            margin-bottom: 0;
         }
-        body>.container{
-            width: 100%;
-            background: none;
+        body > .container
+        {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+
+            width: 100%;
+
+            background: none;
+
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
         }
-        .left-sidebar{
-            width: 164px;
+        .left-sidebar
+        {
+            width: 260px;
+
+            background: #fff;
         }
-        #content{
-            width: calc(100% - 164px);
-            border-left: 1px solid #8c8b8e;
+        .left-sidebar .navigation
+        {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+
+            width: 240px;
+            height: 100%;
+            max-height: 100vh;
+        }
+        .left-sidebar .navigation ul
+        {
+            margin: 0 0 12px;
+            padding: 0;
+
+            list-style: none;
+        }
+
+        .left-sidebar .navigation li a
+        {
+            font-size: 15px;
+            line-height: 1.8;
+
+            display: block;
+
+            width: 100%;
+            padding: 4px;
+            padding-left: 8px;
+
+            cursor: pointer;
+            text-decoration: none;
+
+            color: #535a60;
+        }
+        .left-sidebar .navigation li a:hover
+        {
+            color: #0c0d0e;
+            border-right: 3px solid #f48024;
+            background: #eff0f1;
+        }
+        #content
+        {
+            width: calc(100% - 260px);
             min-height: 100vh;
             padding: 15px;
+
+            border-left: 1px solid #8c8b8e;
         }
-        #content > .section{
-            background: #fff;
-            padding: 5px 10px;
+        #content > .section
+        {
             margin-bottom: 10px;
+            padding: 15px 30px;
+
             border: 1px solid #f2f2f2;
             border-radius: 3px;
+            background: #fff;
         }
-        .section .header{
+        .section .header
+        {
             border-bottom: 1px solid #e4e6e8;
         }
-        .underline{
+        .underline
+        {
             text-decoration: underline;
         }
     </style>
@@ -67,11 +155,33 @@
     <div class="container">
         <div id="left-sidebar" class="left-sidebar">
             <div class="navigation">
-                Менюшка
+                <ul>
+                    <li>
+                        <a href="#section-1">Рекомендації</a>
+                    </li>
+                    <li>
+                        <a href="#section-2">Корисні php команди для debug</a>
+                    </li>
+                    <li>
+                        <a href="#section-3">Визначення версії Magento 2</a>
+                    </li>
+                    <li>
+                        <a href="#section-4">Як отримати доступ до адмінки</a>
+                    </li>
+                    <li>
+                        <a href="#section-5">Основні файли конфігурації</a>
+                    </li>
+                    <li>
+                        <a href="#section-6">Вивід layout усієї сторінки</a>
+                    </li>
+                    <li>
+                        <a href="#section-7">Вивід template path hints</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div id="content">
-            <div class="section">
+            <div id="section-1" class="section">
                 <div class="header">
                     <h2>Рекомендації</h2>
                 </div>
@@ -131,11 +241,10 @@
                             </div>
                         </li>
                     </ul>
-                    <p>Перед тим як потрібно дебажити потрібно знайти місце(так мовити вхідну точку) звідки це почати. Найкращий варіант це помилка(php, або js в консолі). Якщо помилки не має то потрібно перевірити чи включений вивід помилок і вам потрібно дізнатись в якому mode
-                        <a href="https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/magento-modes.html" target="_blank">(About Magento modes)</a> на даний момент magento.</p>
+                    <p>Перед тим як дебажити потрібно знайти місце(так мовити вхідну точку) звідки це почати. Найкращий варіант це помилка(php, або js в консолі). Якщо помилки не має, то потрібно перевірити чи включений вивід помилок і дізнатись в якому mode <a href="https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/magento-modes.html" target="_blank">(About Magento modes)</a> на даний момент magento.</p>
                 </div>
             </div>
-            <div class="section">
+            <div id="section-2" class="section">
                 <div class="header">
                     <h2>Корисні php команди для debug</h2>
                 </div>
@@ -159,7 +268,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="section">
+            <div id="section-3" class="section">
                 <div class="header">
                     <h2>Визначення версії Magento 2</h2>
                 </div>
@@ -194,7 +303,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="section">
+            <div id="section-4" class="section">
                 <div class="header">
                     <h2>Як отримати доступ до адмінки</h2>
                 </div>
@@ -302,7 +411,7 @@
                     <p>Після входу завжди відкатайте свої зміни(ніколи не залишайте їх, це дуже небезпечно)</p>
                 </div>
             </div>
-            <div class="section">
+            <div id="section-5" class="section">
                 <div class="header">
                     <h2>Основні файли конфігурації</h2>
                 </div>
@@ -318,7 +427,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="section">
+            <div id="section-6" class="section">
                 <div class="header">
                     <h2>Вивід layout усієї сторінки</h2>
                 </div>
@@ -353,7 +462,7 @@
                      </div>
                  </div>
             </div>
-            <div class="section">
+            <div id="section-7" class="section">
                 <div class="header">
                     <h2>Вивід template path hints</h2>
                 </div>
@@ -419,6 +528,17 @@
             document.execCommand("copy");
             $tmp.remove();
         }
+        $('.left-sidebar .navigation li a').on( 'click', function(){
+            var el = $(this);
+            var dest = el.attr('href');
+            if(dest !== undefined && dest !== '') {
+                $('html').animate({
+                        scrollTop: $(dest).offset().top
+                    }, 500
+                );
+            }
+            return false;
+        });
     </script>
 </body>
 </html>
