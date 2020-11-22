@@ -11,6 +11,10 @@
             color: #565656;
             background: #fafafb;
         }
+        img
+        {
+            max-width: 100%;
+        }
         .code
         {
             width: 100%;
@@ -516,6 +520,32 @@
                     </ul>
                 </div>
             </div>
+
+
+            <div id="section-7" class="section">
+                <div class="header">
+                    <h2>Створення кастомного html темплейта для повідомлень</h2>
+                    <h4>Даний спосіб дозволяє обійти екранізацію html тегів повідомлення маджентою</h4>
+                </div>
+                <div class="body">
+                    <p>
+                        Маджента дефолтно екранізує весь контант повідомлень і в резуьтаті при спробі вивести таким чином html код він буде мати такий вигляд:
+                    </p>
+                    <img alt="Це все втекло" src="https://store.fooman.co.nz/blog/user/pages/posts/08.displaying-complex-error-messages-in-magento-2/its-all-escaped.png">
+                    <p>На щастя в мадженті є вбудоване рішення для використання власних темплейтів повідомлень.</p>
+                    <p>У <b>\Magento\Framework\Message\ManagerInterfaceцьому</b> є додатковий набір методів, які всі включають в своє ім'я частку Complex:</p>
+                    <div class="code">
+                        <code>
+                            <span style="color: #0000BB"><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexSuccessMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span><br><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexErrorMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span><br><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexWarningMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span><br><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexNoticeMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span></span>
+                        </code>
+                    </div>
+                    <p>
+                        Для їх використання нам спочатку потрібно встановити власний ідентифікатор за допомогою деяких інструкцій di.xml: 
+                    </p>
+                    <h2><a href="https://store.fooman.co.nz/blog/displaying-complex-error-messages-in-magento-2.html">Поги цей пост не закінчений. Детальніше про це можна прочитати за цією лінкою)</a></h2>
+                </div>
+            </div>
+
         </div>
     </div>
 
