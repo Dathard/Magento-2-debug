@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="" />
+    <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/view/templates/footer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/block/Magento2DebugBlock.php" beforeDir="false" afterPath="$PROJECT_DIR$/block/Magento2DebugBlock.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/cart-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/13523741410.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/14758384697.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/19112953132.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/20837461102.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/25083830340.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/25918054956.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/26204891865.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/34969077748.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/43372428372.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/44262583094.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/55461701239.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/73698523289.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/82097942311.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/copy_asus_90nr01l3_m02530_5d2da0129e0eb_images_12940498878.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/copy_hp_6bn09ea_5d234da8e8937_images_12840226422.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/product/xiaomi_redmi_8a_2_32gb_sunset_red_images_14188513923.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/images/select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/js/functions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/layouts/footer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/layouts/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/layouts/sidebar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/magento2/debug.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +59,12 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpTemplates">
+    <option name="NEW_PHP_CLASS_LAST_EXTENSION" value="phtml" />
   </component>
   <component name="ProjectId" id="1lCgeM9dZGImaTBa3qVs4BlaVX9" />
   <component name="ProjectViewState">
@@ -51,12 +107,24 @@
       <workItem from="1607106590475" duration="254000" />
       <workItem from="1607107837956" duration="4541000" />
       <workItem from="1607117443848" duration="5536000" />
-      <workItem from="1607160887613" duration="1451000" />
+      <workItem from="1607160887613" duration="2825000" />
+      <workItem from="1607166480314" duration="4376000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Deployment" timestamp="1607119395303">
@@ -67,6 +135,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="360" y="45" key="#Options/0.0.1366.728@0.0.1366.728" timestamp="1607119359726" />
+    <state x="444" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607170530284">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="444" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1607170530284" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607161056852">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -79,10 +151,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607119405635" />
+    <state x="411" y="87" key="NewPhpClassDialog" timestamp="1607169781414">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="411" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1607169781414" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1607108151328">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1607108151328" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1607166643616">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1607166643616" />
     <state x="539" y="263" key="WebDeployment.AddServerDialog.v.1" timestamp="1607119132621">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

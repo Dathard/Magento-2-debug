@@ -1,0 +1,18 @@
+<?php if ($letCopy): ?>
+<div class="code copy" onclick="copytext(this)">
+    <code>
+        <span style="color: #0000BB">
+            <?= $processedСode ?>
+        </span>
+    </code>
+    <textarea class="code">
+        <?= $code ?>
+    </textarea>
+<?php else: ?>
+    <code>
+        <span style="color: #0000BB">
+            <?= $processedСode?>
+        </span>
+    </code>
+<?php endif;?>
+

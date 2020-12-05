@@ -1,0 +1,41 @@
+    <div id="section-1" class="section">
+        <div class="header">
+            <h2>Рекомендації</h2>
+        </div>
+        <div class="body">
+            <p class="underline">Використовуйте echo and var_dump()</p>
+            <ul>
+                <li>
+                    <p>Якщо ви хочете дізнатись вміст деякого змінної то використовуйте</p>
+                    <?php
+                    $code = <<<'EOD'
+var_dump($array);exit();
+EOD;
+                    echo $block->parsePhpCode($code, 'php', true);
+                    ?>
+                </li>
+                <li>
+                    <p>Якщо ви хочете вивести об`єкт</p>
+                    <?php
+                    $code = <<<'EOD'
+var_dump($product->debug());exit();
+EOD;
+                    echo $block->parsePhpCode($code, 'php', true);
+                    ?>
+                </li>
+                <li>
+                    <p>Якщо хочете дізнатись sql-запит з колекції:</p>
+                    <?php
+                    $code = <<<'EOD'
+echo $collection->getSelect();exit();
+EOD;
+                    echo $block->parsePhpCode($code, 'php', true);
+                    ?>
+                </li>
+            </ul>
+            <p>Перед тим як дебажити потрібно знайти місце(так мовити вхідну точку) звідки це почати. Найкращий варіант це помилка(php, або js в консолі). Якщо помилки не має, то потрібно перевірити чи включений вивід помилок і дізнатись в якому mode <a href="https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/magento-modes.html" target="_blank">(About Magento modes)</a> на даний момент magento.</p>
+        </div>
+    </div>
+
+
+<?php include ROOT.'/view/templates/footer.phtml'; ?>

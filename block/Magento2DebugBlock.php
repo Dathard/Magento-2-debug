@@ -1,20 +1,24 @@
 <?php
 
-class Magento2DebugBlock
+class Magento2DebugBlock extends AbstractBlock
 {
-    private $phpParserModel;
+    private static $template = '/view/templates/magento2/debug.phtml';
+
+    private $parserBlock;
 
     function __construct() {
-        $this->phpParserModel = new PhpParserModel();
+        $this->parserBlock = new ParserBlock();
     }
 
-    public function parsePhpCode($string = '')
+    public function parsePhpCode($string = '', $letCopy = false)
     {
-        return $this->phpParserModel->parseText($string);
+        return $this->parserBlock->parseCode($string, 'php', $letCopy);
     }
 
-    public static function toHtml($block)
+    public function toHtml($block)
     {
-        return require_once(ROOT . '/view/templates/magento2/debug.php');
+        parent::beforeToHtml();
+        require_once(ROOT . self::$template);
+        parent::afterToHtml();
     }
 }

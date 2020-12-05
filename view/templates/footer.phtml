@@ -1,0 +1,23 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+    function copytext(el) {
+        var $tmp = $("<textarea>");
+        $("body").append($tmp);
+        $tmp.val($(el).find('textarea.code:first').val()).select();
+        document.execCommand("copy");
+        $tmp.remove();
+    }
+    $('.left-sidebar .navigation li a').on( 'click', function(){
+        var el = $(this);
+        var dest = el.attr('href');
+        if(dest !== undefined && dest !== '') {
+            $('html').animate({
+                    scrollTop: $(dest).offset().top
+                }, 500
+            );
+        }
+        return false;
+    });
+</script>
+</body>
+</html>
