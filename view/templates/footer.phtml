@@ -1,5 +1,14 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</div>
 <script>
+    $('#content > .section').each(function(i,elem) {
+        var sectionId = 'section-'+i;
+        var sectionHeader = $(this).children('.header').children('h2').text();
+        var navigationItem = '<li><a href="#' + sectionId + '">' + sectionHeader + '</a></li>';
+
+        $(this).attr('id', sectionId);
+        $('#left-sidebar .navigation ul').append(navigationItem);
+    });
+
     function copytext(el) {
         var $tmp = $("<textarea>");
         $("body").append($tmp);

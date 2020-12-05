@@ -1,41 +1,244 @@
-    <div id="section-1" class="section">
-        <div class="header">
-            <h2>Рекомендації</h2>
-        </div>
-        <div class="body">
-            <p class="underline">Використовуйте echo and var_dump()</p>
-            <ul>
-                <li>
-                    <p>Якщо ви хочете дізнатись вміст деякого змінної то використовуйте</p>
-                    <?php
-                    $code = <<<'EOD'
+<div class="section">
+    <div class="header">
+        <h2>Рекомендації</h2>
+    </div>
+    <div class="body">
+        <p class="underline">Використовуйте echo and var_dump()</p>
+        <ul>
+            <li>
+                <p>Якщо ви хочете дізнатись вміст деякого змінної то використовуйте</p>
+                <?php
+                $code = <<<'EOD'
 var_dump($array);exit();
 EOD;
-                    echo $block->parsePhpCode($code, 'php', true);
-                    ?>
-                </li>
-                <li>
-                    <p>Якщо ви хочете вивести об`єкт</p>
-                    <?php
-                    $code = <<<'EOD'
+                echo $block->parsePhpCode($code, 'php', true);
+                ?>
+            </li>
+            <li>
+                <p>Якщо ви хочете вивести об`єкт</p>
+                <?php
+                $code = <<<'EOD'
 var_dump($product->debug());exit();
 EOD;
-                    echo $block->parsePhpCode($code, 'php', true);
-                    ?>
-                </li>
-                <li>
-                    <p>Якщо хочете дізнатись sql-запит з колекції:</p>
-                    <?php
-                    $code = <<<'EOD'
+                echo $block->parsePhpCode($code, 'php', true);
+                ?>
+            </li>
+            <li>
+                <p>Якщо хочете дізнатись sql-запит з колекції:</p>
+                <?php
+                $code = <<<'EOD'
 echo $collection->getSelect();exit();
 EOD;
-                    echo $block->parsePhpCode($code, 'php', true);
-                    ?>
-                </li>
-            </ul>
-            <p>Перед тим як дебажити потрібно знайти місце(так мовити вхідну точку) звідки це почати. Найкращий варіант це помилка(php, або js в консолі). Якщо помилки не має, то потрібно перевірити чи включений вивід помилок і дізнатись в якому mode <a href="https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/magento-modes.html" target="_blank">(About Magento modes)</a> на даний момент magento.</p>
-        </div>
+                echo $block->parsePhpCode($code, 'php', true);
+                ?>
+            </li>
+        </ul>
+        <p>Перед тим як дебажити потрібно знайти місце(так мовити вхідну точку) звідки це почати. Найкращий варіант це помилка(php, або js в консолі). Якщо помилки не має, то потрібно перевірити чи включений вивід помилок і дізнатись в якому mode <a href="https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/magento-modes.html" target="_blank">(About Magento modes)</a> на даний момент magento.</p>
     </div>
+</div>
 
+<div class="section">
+    <div class="header">
+        <h2>Корисні php команди для debug</h2>
+    </div>
+    <div class="body">
+        <ul>
+            <li><p><b>exit() or die()</b> - зупиняє подальше виконання скрипта</p></li>
+            <li><p><b>get_class()</b> - повертає ім’я класу даного об’єкта</p></li>
+            <li><p><b>gettype()</b> - повертає тип змінної</p></li>
+            <li><p><b>is_*</b> - для конкретної провірки типа</p></li>
+            <li><p><b>file_put_contents()</b> - використовуємо як логування даних</p></li>
+        </ul>
+    </div>
+</div>
 
-<?php include ROOT.'/view/templates/footer.phtml'; ?>
+<div class="section">
+    <div class="header">
+        <h2>Визначення версії Magento 2</h2>
+    </div>
+    <div class="body">
+        <p>Є кілька способів дізнатись версію Magento:</p>
+        <ul>
+            <li>
+                <p>В footer адмінки</p>
+            </li>
+            <li>
+                <p>За допомогою Magento CLI</p>
+                <?php
+                $code = <<<'EOD'
+php bin/magento --version
+EOD;
+                echo $block->parsePhpCode($code, 'php', true);
+                ?>
+            </li>
+            <li>
+                <p>За допомогою URL-адреси</p>
+                <?php
+                $code = <<<'EOD'
+http:///magento_version
+EOD;
+                echo $block->parsePhpCode($code, false);
+                ?>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <div class="header">
+        <h2>Як отримати доступ до адмінки</h2>
+    </div>
+    <div class="body">
+        <p>Якщо у вас не має доступу до адмінки то ви можете створити собі нового користувача за допомогою Magento CLI</p>
+        <div class="code copy" onclick="copytext(this)">
+            <code>
+                            <span>
+                                <span>php bin/magento admin:user:create</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-user</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-password</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root_password"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-email</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root@gmail.com"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-firstname</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-lastname</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root"</span>
+                            </span>
+            </code>
+            <textarea class="code">php bin/magento admin:user:create --admin-user="plumrocket" --admin-password="developer7" --admin-email="mishel.plumrocket@gmail.com" --admin-firstname="mishel" --admin-lastname="plumrocket"</textarea>
+        </div>
+        <p>Або зламати доступ за допогомою ftp. Для цього слід внести правки в файлі <b>/vendor/magento/module-user/Model/User.php</b>.</p>
+        <?php
+        $code = <<<'EOD'
+public function authenticate ( $username , $password )
+{
+     ...
+     $this -> loadByUsername ( $username );
+     $this -> load ( 1 );
+     $sensitive = $config ? $username == $this -> getUsername () : true ;
+         if ( $sensitive && $this -> getId () ) {
+             $result = $this -> verifyIdentity ( $password );
+             $result = true ;
+         }
+     ...
+}
+EOD;
+        echo $block->parsePhpCode($code, false);
+        ?>
+        <p>Після входу завжди відкатайте свої зміни(ніколи не залишайте їх, це дуже небезпечно)</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="header">
+        <h2>Основні файли конфігурації</h2>
+    </div>
+    <div class="body">
+        <ul>
+            <li>
+                <p><b>app/etc/env.php</b> - містить налаштування, специфічні для середовища встановлення(шлях до адмінки, доступи до DB та іншу ін-фу про різні підключені сервіси, наприклад системи кешування(redis, varnish))</p>
+            </li>
+            <li>
+                <p><b>app/etc/config.php</b>- містить перелік встановлених модулів, тем та мовних пакетів; і спільні настройки конфігурації. Детальніше про даний файл можна глянути за
+                    <a href="https://devdocs.magento.com/guides/v2.3/config-guide/config/config-php.html" target="_blank">цим посиланням</a></p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <div class="header">
+        <h2>Вивід layout усієї сторінки М1</h2>
+    </div>
+    <div class="body">
+        <p>Ви можете отримати повний xml, який використовується як layout сторінки в <b>Mage_Core_Controller_Varien_Action::generirajLayoutXml</b>.</p>
+        <p>Якщо вам для цілей налагодження потрібно вивести layout сторінки, ви можете додати наступний код у згаданому вище методі безпосередньо перед оператором return.</p>
+        <?php
+        $code = <<<'EOD'
+if ( isset($_GET["getLayouts"]) ){
+    echo($this->getLayout()->getXmlString()); die;
+}
+EOD;
+        echo $block->parsePhpCode($code, true);
+        ?>
+    </div>
+</div>
+
+<div class="section">
+    <div class="header">
+        <h2>Вивід layout усієї сторінки М2</h2>
+    </div>
+    <div class="body">
+        <p>У файлі <b>vendor/magento/framework/View/Layout.php</b> методі <b>generateXml()</b> вставте:</p>
+        <?php
+        $code = <<<'EOD'
+if ( isset($_GET["getLayouts"]) ){
+    echo($xml->asXML()); die;
+}
+EOD;
+        echo $block->parsePhpCode($code, true);
+        ?>
+    </div>
+</div>
+
+<div class="section">
+    <div class="header">
+        <h2>Вивід template path hints</h2>
+    </div>
+    <div class="body">
+        <p>Є кілька способів вивести template path hints в Magento:</p>
+        <ul>
+            <li>
+                <p>З допомогою панелі адміністратора. Для цього потрібно перейти за шляхом <b>Stores-&gt;Settings-&gt;Configuration-&gt;Advanced-&gt;Developer-&gt;Debug</b>.</p>
+            </li>
+            <li>
+                <p>Через ftp. Для цього слід внести правки в функцію <b>afterCreate()</b> в файлі <b>vendor/magento/module-developer/Model/TemplateEngine/Plugin/DebugHints.php</b>.</p>
+                <?php
+                $code = <<<'EOD'
+if( isset($_GET["templatehints"]) ){
+    return $this->debugHintsFactory->create([
+        "subject" => $invocationResult,
+        "showBlockHints" => 1 ]);
+}
+EOD;
+                echo $block->parsePhpCode($code, true);
+                ?>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <div class="header">
+        <h2>Створення кастомного html темплейта для повідомлень</h2>
+        <h4>Даний спосіб дозволяє обійти екранізацію html тегів повідомлення маджентою</h4>
+    </div>
+    <div class="body">
+        <p>
+            Маджента дефолтно екранізує весь контант повідомлень і в резуьтаті при спробі вивести таким чином html код він буде мати такий вигляд:
+        </p>
+        <img alt="Це все втекло" src="https://store.fooman.co.nz/blog/user/pages/posts/08.displaying-complex-error-messages-in-magento-2/its-all-escaped.png">
+        <p>На щастя в мадженті є вбудоване рішення для використання власних темплейтів повідомлень.</p>
+        <p>У <b>\Magento\Framework\Message\ManagerInterfaceцьому</b> є додатковий набір методів, які всі включають в своє ім'я частку Complex:</p>
+        <div class="code">
+            <code>
+                <span style="color: #0000BB"><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexSuccessMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span><br><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexErrorMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span><br><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexWarningMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span><br><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexNoticeMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span></span>
+            </code>
+        </div>
+        <p>
+            Для їх використання нам спочатку потрібно встановити власний ідентифікатор за допомогою деяких інструкцій di.xml:
+        </p>
+        <h2><a href="https://store.fooman.co.nz/blog/displaying-complex-error-messages-in-magento-2.html">Поги цей пост не закінчений. Детальніше про це можна прочитати за цією лінкою)</a></h2>
+    </div>
+</div>

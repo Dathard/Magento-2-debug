@@ -16,9 +16,4 @@ $router->run();
 $content = ob_get_contents();
 ob_end_clean();
 
-$file = ROOT.'/generated/test.html';
-unlink($file);
-$current = file_get_contents($file);
-file_put_contents($file, $content, FILE_APPEND);
-
 echo $content;
