@@ -8,10 +8,8 @@ class Magento2DebugBlock
         $this->phpParserModel = new PhpParserModel();
     }
 
-    public function parsePhpCode($string = null)
+    public function parsePhpCode($string = '')
     {
-        return '++++++11';
-
         return $this->phpParserModel->parseText($string);
     }
 

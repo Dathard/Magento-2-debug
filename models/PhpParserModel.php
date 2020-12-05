@@ -8,12 +8,8 @@ class PhpParserModel
         $this->addReplacementRules();
     }
 
-    public function parseText($string = null)
+    public function parseText($string = '')
     {
-        if ($string === null) {
-            return '';
-        }
-
         $replacementRules = $this->getReplacementRules($string);
 
         foreach ($replacementRules as $rule) {
