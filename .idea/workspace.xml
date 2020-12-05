@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1lCgeM9dZGImaTBa3qVs4BlaVX9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/components/Autoload.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\14dim\Desktop\mvc-shop-master\block" />
+      <recent name="C:\Users\14dim\Desktop\mvc-shop-master\template" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="" />
+      <created>1607106582548</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607106582548</updated>
+      <workItem from="1607106590475" duration="254000" />
+      <workItem from="1607107837956" duration="4541000" />
+      <workItem from="1607117443848" duration="5536000" />
+      <workItem from="1607160887613" duration="713000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Deployment" timestamp="1607119395303">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Deployment/0.0.1366.728@0.0.1366.728" timestamp="1607119395303" />
+    <state x="360" y="45" key="#Options" timestamp="1607119359726">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="360" y="45" key="#Options/0.0.1366.728@0.0.1366.728" timestamp="1607119359726" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607161056852">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1607161056852" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1607119446321">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1607119446321" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1607119405635">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607119405635" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1607108151328">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1607108151328" />
+    <state x="539" y="263" key="WebDeployment.AddServerDialog.v.1" timestamp="1607119132621">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="539" y="263" key="WebDeployment.AddServerDialog.v.1/0.0.1366.728@0.0.1366.728" timestamp="1607119132621" />
+    <state x="505" y="94" key="ftp.server.browser" timestamp="1607119393150">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="505" y="94" key="ftp.server.browser/0.0.1366.728@0.0.1366.728" timestamp="1607119393150" />
+  </component>
+</project>
