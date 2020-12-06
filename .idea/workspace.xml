@@ -21,12 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/templates/code/parse/php.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/code/parse/php.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/footer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/footer.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/header.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/header.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/magento2/debug.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/magento2/debug.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/sidebar.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/sidebar.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +80,8 @@
       <workItem from="1607117443848" duration="5536000" />
       <workItem from="1607160887613" duration="2825000" />
       <workItem from="1607166480314" duration="4581000" />
-      <workItem from="1607186313198" duration="4525000" />
+      <workItem from="1607186313198" duration="4739000" />
+      <workItem from="1607273959288" duration="36000" />
     </task>
     <servers />
   </component>
