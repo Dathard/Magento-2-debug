@@ -10,7 +10,7 @@ class ParserBlock
         $this->phpParserModel = new PhpParserModel();
     }
 
-    public function parseCode($code = '', $type = 'php', $letCopy = false)
+    public function parseCode($code = '', $type = 'php', $letCopy = false):string
     {
         $processedСode = $this->phpParserModel->parseText($code);
 

@@ -4,8 +4,10 @@ function __autoload($class_name)
 {
 	$array_paths = array(
 		'/models/',
+        '/models/generated/',
 		'/components/',
-        '/block/'
+        '/block/',
+        '/controllers/'
 	);
 
 	foreach ($array_paths as $path) {

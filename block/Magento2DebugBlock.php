@@ -10,15 +10,17 @@ class Magento2DebugBlock extends AbstractBlock
         $this->parserBlock = new ParserBlock();
     }
 
-    public function parsePhpCode($string = '', $letCopy = false)
+    public function parsePhpCode($string = '', $letCopy = false):string
     {
         return $this->parserBlock->parseCode($string, 'php', $letCopy);
     }
 
-    public function toHtml($block)
+    public function toHtml($block):string
     {
         parent::beforeToHtml();
         require_once(ROOT . self::$template);
         parent::afterToHtml();
+
+        return $this->content;
     }
 }

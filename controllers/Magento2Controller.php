@@ -1,12 +1,12 @@
 <?php
 
-class Magento2Controller
+class Magento2Controller extends AbstractController
 {
 
     public function actionDebug()
     {
         $block = new Magento2DebugBlock();
-        $block->toHtml($block);
+        $this->showContent($block->toHtml($block));
 
         return true;
     }

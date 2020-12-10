@@ -12,8 +12,3 @@ ob_start();
 
 $router = new Router();
 $router->run();
-
-$content = ob_get_contents();
-ob_end_clean();
-
-echo $content;
