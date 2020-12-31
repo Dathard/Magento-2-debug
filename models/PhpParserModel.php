@@ -2,12 +2,22 @@
 
 class PhpParserModel
 {
+    /**
+     * @var array
+     */
     private $replacementRules = [];
 
+    /**
+     * PhpParserModel constructor.
+     */
     function __construct() {
         $this->addReplacementRules();
     }
 
+    /**
+     * @param string $string
+     * @return mixed|string|string[]
+     */
     public function parseText($string = '')
     {
         $replacementRules = $this->getReplacementRules($string);
@@ -19,6 +29,10 @@ class PhpParserModel
         return $string;
     }
 
+    /**
+     * @param null $string
+     * @return array
+     */
     public function getReplacementRules($string = null)
     {
         if ($string === null) {

@@ -2,14 +2,26 @@
 
 class ParserBlock
 {
+    /**
+     * @var string
+     */
     private static $phpTemplate = '/view/templates/code/parse/php.phtml';
 
     private $phpParserModel;
 
+    /**
+     * ParserBlock constructor.
+     */
     function __construct() {
         $this->phpParserModel = new PhpParserModel();
     }
 
+    /**
+     * @param string $code
+     * @param string $type
+     * @param false $letCopy
+     * @return string
+     */
     public function parseCode($code = '', $type = 'php', $letCopy = false):string
     {
         $processedСode = $this->phpParserModel->parseText($code);
@@ -22,6 +34,12 @@ class ParserBlock
         return $content;
     }
 
+    /**
+     * @param string $code
+     * @param string $processedСode
+     * @param string $type
+     * @param false $letCopy
+     */
     private function toHtml($code = '', $processedСode = '', $type = 'php', $letCopy = false)
     {
         if ($type === 'php'){

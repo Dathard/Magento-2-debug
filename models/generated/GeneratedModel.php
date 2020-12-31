@@ -2,6 +2,9 @@
 
 class GeneratedModel
 {
+    /**
+     * @return string
+     */
     private static function getFileName():string
     {
         $url = $_SERVER['REQUEST_URI'];
@@ -12,6 +15,9 @@ class GeneratedModel
         return array_pop($url) . '.html';
     }
 
+    /**
+     * @param string $content
+     */
     public static function save($content = '')
     {
         $filePath = ROOT . '/generated/' . self::getFileName();

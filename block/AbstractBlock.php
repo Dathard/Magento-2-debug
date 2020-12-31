@@ -2,10 +2,24 @@
 
 class AbstractBlock
 {
+    /**
+     * @var string
+     */
     private static $headerTemplate = '/view/templates/header.phtml';
+
+    /**
+     * @var string
+     */
     private static $sidebarTemplate = '/view/templates/sidebar.phtml';
+
+    /**
+     * @var string
+     */
     private static $footerTemplate = '/view/templates/footer.phtml';
 
+    /**
+     * @var string
+     */
     protected $content = '';
 
     protected function beforeToHtml()

@@ -20,14 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/routes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/schema/routes.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/block/AbstractBlock.php" beforeDir="false" afterPath="$PROJECT_DIR$/block/AbstractBlock.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/block/Magento2DebugBlock.php" beforeDir="false" afterPath="$PROJECT_DIR$/block/Magento2DebugBlock.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/block/ParserBlock.php" beforeDir="false" afterPath="$PROJECT_DIR$/block/ParserBlock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/Autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Router.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AbstractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AbstractController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Magento2Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Magento2Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/magento-2-debug.html" beforeDir="false" afterPath="$PROJECT_DIR$/generated/magento-2-debug.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/PhpParserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/PhpParserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/generated/GeneratedModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/generated/GeneratedModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/magento2/debug.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/magento2/debug.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +64,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -68,7 +77,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\models" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\config\schema" />
       <recent name="C:\Users\14dim\Desktop\mvc-shop-master\block" />
       <recent name="C:\Users\14dim\Desktop\mvc-shop-master\template" />
     </key>
@@ -89,6 +102,10 @@
       <workItem from="1607186313198" duration="4739000" />
       <workItem from="1607273959288" duration="881000" />
       <workItem from="1607622094605" duration="3810000" />
+      <workItem from="1607963444255" duration="348000" />
+      <workItem from="1609427261960" duration="4925000" />
+      <workItem from="1609432251985" duration="974000" />
+      <workItem from="1609433347652" duration="589000" />
     </task>
     <servers />
   </component>
@@ -116,6 +133,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="360" y="45" key="#Options/0.0.1366.728@0.0.1366.728" timestamp="1607119359726" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609427971818">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1609427971818" />
     <state x="444" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607623192504">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -128,10 +149,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1607119446321" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1607119405635">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1609433232075">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607119405635" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609433232075" />
     <state x="411" y="87" key="NewPhpClassDialog" timestamp="1607169781414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -152,14 +173,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="539" y="263" key="WebDeployment.AddServerDialog.v.1/0.0.1366.728@0.0.1366.728" timestamp="1607119132621" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607622167341">
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609427336652">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1607622167341" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1609427336652" />
+    <state x="396" y="172" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1609433487035">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="396" y="172" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1609433487035" />
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1609431301659">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1609431301659" />
     <state x="505" y="94" key="ftp.server.browser" timestamp="1607119393150">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="505" y="94" key="ftp.server.browser/0.0.1366.728@0.0.1366.728" timestamp="1607119393150" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1609430908032">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1609430908032" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1607624994797">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
