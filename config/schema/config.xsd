@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="config">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="optimization" type="optimizationDeclaration" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="uniqueCompressSettings">
+            <xs:annotation>
+                <xs:documentation>
+                    Module name must be unique.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="compress"/>
+            <xs:field xpath="@type1"/>
+        </xs:unique>
+    </xs:element>
+
+    <xs:complexType name="optimizationDeclaration">
+        <xs:sequence>
+            <xs:element name="compress" type="compressDeclaration" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="compressDeclaration">
+        <xs:sequence>
+            <xs:element name="contentType" type="contentTypeDeclaration" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="contentTypeDeclaration">
+        <xs:attribute name="name" type="contentEncryptionType" use="required" />
+        <xs:attribute name="enabled" type="xs:boolean" use="required" />
+    </xs:complexType>
+
+    <xs:simpleType name="contentEncryptionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="html"/>
+            <xs:enumeration value="css"/>
+            <xs:enumeration value="js"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -36,6 +36,27 @@ class AbstractBlock
         require_once(ROOT . self::$footerTemplate);
 
         $content = ob_get_contents();
+
+
+
+//        $content = preg_replace(
+//            array(
+//                '/\>[^\S ]+/s',
+//                '/[^\S ]+\</s',
+//                '/(\s)+/s',
+//                '/<!--(?![^<]*noindex)(.*?)-->/'
+//            ),
+//            array(
+//                '>',
+//                '<',
+//                '\\1',
+//                ''
+//            ),
+//            $content
+//        );
+
+
+
         ob_end_clean();
 
         $this->content = $content;
