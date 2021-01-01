@@ -7,37 +7,32 @@
         <ul>
             <li>
                 <p>Якщо ви хочете дізнатись вміст деякого змінної то використовуйте</p>
-            </li>
-        </ul>
-            <?php
-            $code = <<<'EOD'
+                <?php
+                $code = <<<'EOD'
 var_dump($array);exit();
 EOD;
-            echo $block->parsePhpCode($code, 'php', true);
-            ?>
-
-        <ul>
+                echo $block->parsePhpCode($code, 'php', true);
+                ?>
+            </li>
             <li>
                 <p>Якщо ви хочете вивести об`єкт</p>
-            </li>
-        </ul>
-        <?php
-        $code = <<<'EOD'
+                <?php
+                $code = <<<'EOD'
 var_dump($product->debug());exit();
 EOD;
-        echo $block->parsePhpCode($code, 'php', true);
-        ?>
-        <ul>
+                echo $block->parsePhpCode($code, 'php', true);
+                ?>
+            </li>
             <li>
                 <p>Якщо хочете дізнатись sql-запит з колекції:</p>
-            </li>
-        </ul>
-        <?php
-        $code = <<<'EOD'
+                <?php
+                $code = <<<'EOD'
 echo $collection->getSelect();exit();
 EOD;
-        echo $block->parsePhpCode($code, 'php', true);
-        ?>
+                echo $block->parsePhpCode($code, 'php', true);
+                ?>
+            </li>
+        </ul>
         <p>Перед тим як дебажити потрібно знайти місце(так мовити вхідну точку) звідки це почати. Найкращий варіант це помилка(php, або js в консолі). Якщо помилки не має, то потрібно перевірити чи включений вивід помилок і дізнатись в якому mode <a href="https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/magento-modes.html" target="_blank">(About Magento modes)</a> на даний момент magento.</p>
     </div>
 </div>
@@ -69,25 +64,23 @@ EOD;
             </li>
             <li>
                 <p>За допомогою Magento CLI</p>
-            </li>
-        </ul>
-        <?php
-        $code = <<<'EOD'
+                <?php
+                $code = <<<'EOD'
 php bin/magento --version
 EOD;
-        echo $block->parsePhpCode($code, 'php', true);
-        ?>
-        <ul>
+                echo $block->parsePhpCode($code, 'php', true);
+                ?>
+            </li>
             <li>
                 <p>За допомогою URL-адреси</p>
-            </li>
-        </ul>
-        <?php
-        $code = <<<'EOD'
+                <?php
+                $code = <<<'EOD'
 http:///magento_version
 EOD;
-        echo $block->parsePhpCode($code, false);
-        ?>
+                echo $block->parsePhpCode($code, false);
+                ?>
+            </li>
+        </ul>
     </div>
 </div>
 
@@ -211,18 +204,18 @@ EOD;
             </li>
             <li>
                 <p>Через ftp. Для цього слід внести правки в функцію <b>afterCreate()</b> в файлі <b>vendor/magento/module-developer/Model/TemplateEngine/Plugin/DebugHints.php</b>.</p>
-            </li>
-        </ul>
-        <?php
-        $code = <<<'EOD'
+                <?php
+                $code = <<<'EOD'
 if( isset($_GET["templatehints"]) ){
     return $this->debugHintsFactory->create([
         "subject" => $invocationResult,
         "showBlockHints" => 1 ]);
 }
 EOD;
-        echo $block->parsePhpCode($code, true);
-        ?>
+                echo $block->parsePhpCode($code, true);
+                ?>
+            </li>
+        </ul>
     </div>
 </div>
 
