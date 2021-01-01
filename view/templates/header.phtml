@@ -3,13 +3,16 @@
     <meta charset="utf-8">
     <title>Magento 2 debug</title>
     <meta name="description" content="Magento 2 debug">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Arvo" />
     <style>
         body
         {
-            font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+            font-family: Arvo, sans-serif;
+
+            margin: 0;
 
             color: #565656;
-            background: #fafafb;
+            background: #fbfaf7;
         }
         img
         {
@@ -17,14 +20,30 @@
         }
         .code
         {
-            width: 100%;
-            width: 90%;
+            font-family: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal;
+            font-size: 14px;
+
+            overflow: auto;
+            overflow-y: hidden;
+
+            width: 97%;
             padding: 12px;
 
-            color: #565656;
-            border-radius: 5px;
-            background: #f8f7f2;
+            color: #00b;
+            border: 1px solid #d7d8c8;
+            border-radius: 4px;
+            background: #f8f8f8;
         }
+        .code .kd
+        {
+            color: #070;
+        }
+
+        .code .s2
+        {
+            color: #d00;
+        }
+
         .code.copy
         {
             position: relative;
@@ -61,12 +80,12 @@
         }
         h2
         {
-            font-size: 1.5rem;
+            font-size: 25px;
             font-weight: normal;
-            line-height: 1.35;
 
-            margin: 0;
-            margin-bottom: 0;
+            padding-bottom: 5px;
+
+            border-bottom: 1px solid #ccc;
         }
         body > .container
         {
@@ -84,26 +103,31 @@
         }
         .left-sidebar
         {
-            width: 260px;
-
-            background: #fff;
+            width: 270px;
         }
         .left-sidebar .navigation
         {
             position: fixed;
-            top: 8px;
-            left: 8px;
 
-            width: 240px;
+            width: 270px;
             height: 100%;
             max-height: 100vh;
+
+            border: 1px solid #000;
+            -webkit-border-top-right-radius: 4px;
+            -webkit-border-bottom-right-radius: 4px;
+            background-color: #171717;
         }
         .left-sidebar .navigation ul
         {
             margin: 0 0 12px;
-            padding: 0;
+            padding: 5px 0;
 
             list-style: none;
+        }
+        .left-sidebar .navigation ul li
+        {
+            padding-right: 8px;
         }
 
         .left-sidebar .navigation li a
@@ -114,40 +138,40 @@
             display: block;
 
             width: 100%;
-            padding: 4px;
-            padding-left: 8px;
+            padding: 6px 0;
+            padding-left: 12px;
 
             cursor: pointer;
             text-decoration: none;
 
-            color: #535a60;
+            color: #fdfdfb;
         }
         .left-sidebar .navigation li a:hover
         {
-            color: #0c0d0e;
-            border-right: 3px solid #f48024;
-            background: #eff0f1;
+            background: -webkit-gradient(linear, left bottom, left top, from(#af0011), to(#820011));
+            background: -o-linear-gradient(bottom, #af0011 0%, #820011 100%);
+            background:    linear-gradient(to top, #af0011 0%, #820011 100%);
         }
         #content
         {
-            width: calc(100% - 260px);
+            width: calc(100% - 310px);
             min-height: 100vh;
-            padding: 15px;
 
-            border-left: 1px solid #8c8b8e;
+            color: #232323;
         }
         #content > .section
         {
-            margin-bottom: 10px;
-            padding: 15px 30px;
+            width: 70%;
+            margin: 10px 0;
+            padding: 15px;
 
             border: 1px solid #f2f2f2;
             border-radius: 3px;
             background: #fff;
         }
-        .section .header
+        #content
         {
-            border-bottom: 1px solid #e4e6e8;
+            line-height: 1.5rem;
         }
         .underline
         {

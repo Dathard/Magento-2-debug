@@ -2,7 +2,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config.xsd">
     <optimization>
         <compress>
-            <contentType name="html" enabled="true" />
+            <field id="compress_html" type='bool' value="true" />
+            <field id="html" type='bool' value="true" />
         </compress>
     </optimization>
 </config>

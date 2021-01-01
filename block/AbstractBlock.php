@@ -39,21 +39,21 @@ class AbstractBlock
 
 
 
-//        $content = preg_replace(
-//            array(
-//                '/\>[^\S ]+/s',
-//                '/[^\S ]+\</s',
-//                '/(\s)+/s',
-//                '/<!--(?![^<]*noindex)(.*?)-->/'
-//            ),
-//            array(
-//                '>',
-//                '<',
-//                '\\1',
-//                ''
-//            ),
-//            $content
-//        );
+        $content = preg_replace(
+            array(
+                '/\>[^\S ]+/s',
+                '/[^\S ]+\</s',
+                '/(\s)+/s',
+                '/<!--(?![^<]*noindex)(.*?)-->/'
+            ),
+            array(
+                '>',
+                '<',
+                '\\1',
+                ''
+            ),
+            $content
+        );
 
 
 

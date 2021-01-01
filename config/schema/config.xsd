@@ -25,20 +25,21 @@
 
     <xs:complexType name="compressDeclaration">
         <xs:sequence>
-            <xs:element name="contentType" type="contentTypeDeclaration" maxOccurs="unbounded" />
+            <xs:element name="field" type="fieldDeclaration" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="contentTypeDeclaration">
-        <xs:attribute name="name" type="contentEncryptionType" use="required" />
-        <xs:attribute name="enabled" type="xs:boolean" use="required" />
+    <xs:complexType name="fieldDeclaration">
+        <xs:attribute name="id" type="xs:string" use="required" />
+        <xs:attribute name="type" type="valueType" use="required" />
+        <xs:attribute name="value" type="xs:string" use="required" />
     </xs:complexType>
 
-    <xs:simpleType name="contentEncryptionType">
+    <xs:simpleType name="valueType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="html"/>
-            <xs:enumeration value="css"/>
-            <xs:enumeration value="js"/>
+            <xs:enumeration value="int"/>
+            <xs:enumeration value="string"/>
+            <xs:enumeration value="bool"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

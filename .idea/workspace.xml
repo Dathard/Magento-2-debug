@@ -20,9 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/configParser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/block/AbstractBlock.php" beforeDir="false" afterPath="$PROJECT_DIR$/block/AbstractBlock.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/schema/config.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/config/schema/config.xsd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generated/magento-2-debug.html" beforeDir="false" afterPath="$PROJECT_DIR$/generated/magento-2-debug.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/PhpParserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/PhpParserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/code/parse/php.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/code/parse/php.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/header.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/header.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/magento2/debug.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/magento2/debug.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +102,7 @@
       <workItem from="1609432251985" duration="974000" />
       <workItem from="1609433347652" duration="589000" />
       <workItem from="1609437032070" duration="1896000" />
+      <workItem from="1609463552085" duration="8159000" />
     </task>
     <servers />
   </component>
@@ -169,18 +178,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="396" y="172" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1609433487035" />
-    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1609431301659">
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1609471393374">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1609431301659" />
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1609471393374" />
     <state x="505" y="94" key="ftp.server.browser" timestamp="1607119393150">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="505" y="94" key="ftp.server.browser/0.0.1366.728@0.0.1366.728" timestamp="1607119393150" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1609430908032">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1609465426841">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1609430908032" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1609465426841" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1607624994797">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

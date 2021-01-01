@@ -42,7 +42,7 @@ class Router
         $attributes = [];
 
         foreach($tag->attributes() as $name => $value) {
-            $attributes[$name] = (string) $value;
+            $attributes[$name] = $value->__toString();
         }
 
         return $attributes;

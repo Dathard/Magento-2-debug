@@ -44,7 +44,7 @@ class PhpParserModel
         preg_match_all ('([\"\'](?<=[\"\'])[^\"\']+[\'\"])', $string, $matches);
 
         foreach ( array_shift($matches) as $element) {
-            $replacementRules[] = [$element, '<span style="color: #DD0000">'.$element.'</span>'];
+            $replacementRules[] = [$element, '<span class="s2">'.$element.'</span>'];
         }
 
         return $replacementRules;
@@ -52,24 +52,24 @@ class PhpParserModel
 
     private function addReplacementRules()
     {
-        $this->replacementRules[] = ['if ', '<span style="color: #007700">if</span>'];
-        $this->replacementRules[] = ['(', '<span style="color: #007700">(</span>'];
-        $this->replacementRules[] = [')', '<span style="color: #007700">)</span>'];
-        $this->replacementRules[] = ['{', '<span style="color: #007700">{</span>'];
-        $this->replacementRules[] = ['}', '<span style="color: #007700">}</span>'];
-        $this->replacementRules[] = ['[', '<span style="color: #007700">[</span>'];
-        $this->replacementRules[] = [']', '<span style="color: #007700">]</span>'];
-        $this->replacementRules[] = [';', '<span style="color: #007700">;</span>'];
-        $this->replacementRules[] = [' = ', '<span style="color: #007700"> = </span>'];
-        $this->replacementRules[] = [',', '<span style="color: #007700">,</span>'];
-        $this->replacementRules[] = ['->', '<span style="color: #007700">-></span>'];
-        $this->replacementRules[] = ['&&', '<span style="color: #007700">&&</span>'];
-        $this->replacementRules[] = [' :', '<span style="color: #007700">:</span>'];
-        $this->replacementRules[] = ['::', '<span style="color: #007700">::</span>'];
-        $this->replacementRules[] = ['...', '<span style="color: #007700">...</span>'];
-        $this->replacementRules[] = ['public', '<span style="color: #007700">public</span>'];
-        $this->replacementRules[] = ['function', '<span style="color: #007700">function</span>'];
-        $this->replacementRules[] = ['=>', '<span style="color: #007700">=></span>'];
+        $this->replacementRules[] = [' if ', '<span class="kd">if</span>'];
+        $this->replacementRules[] = ['(', '<span class="kd">(</span>'];
+        $this->replacementRules[] = [')', '<span class="kd">)</span>'];
+        $this->replacementRules[] = ['{', '<span class="kd">{</span>'];
+        $this->replacementRules[] = ['}', '<span class="kd">}</span>'];
+        $this->replacementRules[] = ['[', '<span class="kd">[</span>'];
+        $this->replacementRules[] = [']', '<span class="kd">]</span>'];
+        $this->replacementRules[] = [';', '<span class="kd">;</span>'];
+        $this->replacementRules[] = [' = ', '<span class="kd"> = </span>'];
+        $this->replacementRules[] = [',', '<span class="kd">,</span>'];
+        $this->replacementRules[] = ['->', '<span class="kd">-></span>'];
+        $this->replacementRules[] = ['&&', '<span class="kd">&&</span>'];
+        $this->replacementRules[] = [' :', '<span class="kd">:</span>'];
+        $this->replacementRules[] = ['::', '<span class="kd">::</span>'];
+        $this->replacementRules[] = ['...', '<span class="kd">...</span>'];
+        $this->replacementRules[] = ['public', '<span class="kd">public</span>'];
+        $this->replacementRules[] = ['function', '<span class="kd">function</span>'];
+        $this->replacementRules[] = ['=>', '<span class="kd">=></span>'];
         $this->replacementRules[] = ['   ', '&nbsp;&nbsp;&nbsp;'];
         $this->replacementRules[] = [["\r\n", "\r", "\n"], '<br>'];
     }
