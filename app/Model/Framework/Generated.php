@@ -1,6 +1,8 @@
 <?php
 
-class GeneratedModel
+namespace App\Model\Framework;
+
+class Generated
 {
     /**
      * @return string

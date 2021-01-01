@@ -1,6 +1,8 @@
 <?php
 
-class PhpParserModel
+namespace App\Model\Parser;
+
+class Php
 {
     /**
      * @var array

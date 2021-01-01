@@ -20,19 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/mvc-shop-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mvc-shop-master.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/block/AbstractBlock.php" beforeDir="false" afterPath="$PROJECT_DIR$/block/AbstractBlock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated/magento-2-debug.html" beforeDir="false" afterPath="$PROJECT_DIR$/generated/magento-2-debug.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/footer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/footer.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/header.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/header.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/magento2/debug.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/magento2/debug.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/block/AbstractBlock.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/block/Magento2DebugBlock.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/block/ParserBlock.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AbstractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/AbstractController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ErrorController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Magento2Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/magento-2-debug.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/PhpParserModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Router.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/generated/GeneratedModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/errors/not-found.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
@@ -40,6 +51,11 @@
   </component>
   <component name="PhpTemplates">
     <option name="NEW_PHP_CLASS_LAST_EXTENSION" value="phtml" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1lCgeM9dZGImaTBa3qVs4BlaVX9" />
   <component name="ProjectViewState">
@@ -55,7 +71,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../DevM2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Model/Framework" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -68,9 +84,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\models" />
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Framework" />
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Parser" />
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model" />
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Block" />
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Block\Debug" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Framework" />
       <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\config\schema" />
       <recent name="C:\Users\14dim\Desktop\mvc-shop-master\block" />
       <recent name="C:\Users\14dim\Desktop\mvc-shop-master\template" />
@@ -98,7 +119,8 @@
       <workItem from="1609433347652" duration="589000" />
       <workItem from="1609437032070" duration="1896000" />
       <workItem from="1609463552085" duration="8408000" />
-      <workItem from="1609514092067" duration="2482000" />
+      <workItem from="1609514092067" duration="4883000" />
+      <workItem from="1609532010557" duration="5272000" />
     </task>
     <servers />
   </component>
@@ -174,10 +196,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="396" y="172" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1609433487035" />
-    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1609471393374">
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1609534336336">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1609471393374" />
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1609534336336" />
     <state x="505" y="94" key="ftp.server.browser" timestamp="1607119393150">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

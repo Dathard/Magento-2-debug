@@ -1,6 +1,10 @@
 <?php
 
-class ParserBlock
+namespace App\Block;
+
+use App\Model\Parser\Php as PhpParserModel;
+
+class Parser
 {
     /**
      * @var string

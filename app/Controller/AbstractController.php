@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Controller;
+
+use App\Model\Framework\Generated as GeneratedModel;
+
 class AbstractController
 {
     /**
