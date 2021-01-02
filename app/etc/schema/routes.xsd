@@ -13,7 +13,7 @@
                 </xs:documentation>
             </xs:annotation>
             <xs:selector xpath="route"/>
-            <xs:field xpath="@name"/>
+            <xs:field xpath="@frontName"/>
         </xs:unique>
     </xs:element>
 

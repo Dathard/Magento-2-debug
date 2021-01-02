@@ -1,14 +1,10 @@
 {
   "autoload": {
     "psr4": {
-      "App\\Controller\\": "app/Controller/",
-      "App\\Block\\": "app/Block/",
-      "App\\Model\\": "app/Model/"
+      "App\\": "app/"
     },
     "classmap": [
-      "app/Controller/",
-      "app/Block/",
-      "app/Model/"
+      "app/"
     ]
   }
 }

@@ -3,7 +3,7 @@
 define('ROOT', dirname(__FILE__));
 //require_once(ROOT.'/config/routes.xml');
 
-$path = ROOT.'/config/config.xml';
+$path = ROOT.'/app/etc/config.xml';
 
 $config = simplexml_load_file($path);
 

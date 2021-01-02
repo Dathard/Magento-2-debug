@@ -8,7 +8,7 @@ class AbstractParser
      * @param $tag
      * @return array
      */
-    private function getAttributes($tag)
+    protected function getAttributes($tag)
     {
         $attributes = [];
 
