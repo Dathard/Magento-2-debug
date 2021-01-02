@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/routes.xsd">
-    <route name="magento-2-debug" path="magento2/debug"/>
+<!--    <route name="magento-2-debug" path="magento2/debug"/>-->
 
-    <route name="debug/magento-2" path="App\Controller\Debug\Magento2"/>
+    <route frontName="debug/magento-2"  controller="App\Controller\Debug\Magento2">
+        <arguments>
+            <argument name="magentoVersion" type="int" value="2" />
+        </arguments>
+    </route>
 </routes>

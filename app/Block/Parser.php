@@ -2,7 +2,7 @@
 
 namespace App\Block;
 
-use App\Model\Parser\Php as PhpParserModel;
+use App\Model\Stylization\Code\Php\Replacement as PhpParserModel;
 
 class Parser
 {

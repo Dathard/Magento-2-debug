@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model\Parser;
+namespace App\Model\Stylization\Code\Php;
 
-class Php
+class Replacement
 {
     /**
      * @var array

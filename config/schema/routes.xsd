@@ -18,7 +18,35 @@
     </xs:element>
 
     <xs:complexType name="routeDeclaration">
-        <xs:attribute name="name" type="xs:string" use="required" />
-        <xs:attribute name="path" type="xs:string" use="required" />
+        <xs:sequence>
+            <xs:element name="arguments" type="argumentsDeclaration" minOccurs="0" maxOccurs="unbounded">
+                <xs:key name="argumentName">
+                    <xs:selector xpath="argument"></xs:selector>
+                    <xs:field xpath="@name"></xs:field>
+                </xs:key>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="frontName" type="xs:string" use="required" />
+        <xs:attribute name="controller" type="xs:string" use="required" />
     </xs:complexType>
+
+    <xs:complexType name="argumentsDeclaration">
+        <xs:sequence>
+            <xs:element name="argument" type="argumentDeclaration" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="argumentDeclaration">
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="type" type="valueType" use="required" />
+        <xs:attribute name="value" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:simpleType name="valueType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="int"/>
+            <xs:enumeration value="string"/>
+            <xs:enumeration value="bool"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

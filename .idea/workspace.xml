@@ -20,29 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/mvc-shop-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mvc-shop-master.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Framework/Loader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/AbstractParser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/Routes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/favicon.ico.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/block/AbstractBlock.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/block/Magento2DebugBlock.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/block/ParserBlock.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Block/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Block/Parser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Framework/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Framework/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Php.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AbstractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/AbstractController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ErrorController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Magento2Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated/magento-2-debug.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/PhpParserModel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Router.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/generated/GeneratedModel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/errors/not-found.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/schema/routes.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/config/schema/routes.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/footer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/footer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/header.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/header.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -71,7 +68,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Model/Framework" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -91,6 +88,7 @@
       <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Block\Debug" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Stylization\code" />
       <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Framework" />
       <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\config\schema" />
       <recent name="C:\Users\14dim\Desktop\mvc-shop-master\block" />
@@ -121,6 +119,9 @@
       <workItem from="1609463552085" duration="8408000" />
       <workItem from="1609514092067" duration="4883000" />
       <workItem from="1609532010557" duration="5272000" />
+      <workItem from="1609590416086" duration="341000" />
+      <workItem from="1609590996345" duration="3151000" />
+      <workItem from="1609595147199" duration="1119000" />
     </task>
     <servers />
   </component>
@@ -156,18 +157,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="444" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1607623192504" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607161056852">
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609595843194">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1607161056852" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1609595843194" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609593381513">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1609593381513" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1607119446321">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1607119446321" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1609437935919">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1609590768331">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609437935919" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609590768331" />
     <state x="411" y="87" key="NewPhpClassDialog" timestamp="1607169781414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -196,18 +201,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="396" y="172" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1609433487035" />
-    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1609534336336">
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1609593636098">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1609534336336" />
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1609593636098" />
     <state x="505" y="94" key="ftp.server.browser" timestamp="1607119393150">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="505" y="94" key="ftp.server.browser/0.0.1366.728@0.0.1366.728" timestamp="1607119393150" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1609465426841">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1609592656341">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1609465426841" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1609592656341" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1607624994797">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

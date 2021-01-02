@@ -15,6 +15,11 @@
         $tmp.val($(el).find('textarea.code:first').val()).select();
         document.execCommand("copy");
         $tmp.remove();
+
+        $(el).addClass('copy-success');
+        setTimeout(function () {
+            $(el).removeClass('copy-success');
+        },400);
     }
 
     $('.left-sidebar .navigation li a').on( 'click', function(){
