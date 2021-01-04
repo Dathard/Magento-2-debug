@@ -1,13 +1,23 @@
 <?xml version="1.0"?>
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/routes.xsd">
-    <route frontName="debug/magento-1"  controller="App\Controller\Debug\Magento2">
+    <route pattern="debug/magento-1"  controller="App\Controller\Debug\Magento2">
         <arguments>
             <argument name="magentoVersion" type="int" value="1" />
         </arguments>
     </route>
-    <route frontName="debug/magento-2"  controller="App\Controller\Debug\Magento">
+    <route pattern="debug/magento-2"  controller="App\Controller\Debug\Magento">
         <arguments>
             <argument name="magentoVersion" type="int" value="2" />
         </arguments>
+    </route>
+
+    <route pattern="category/([0-9]+)/page=([0-9]+)"  controller="App\Controller\Debug\Magento">
+        <arguments>
+            <argument name="magentoVersion" type="int" value="2" />
+        </arguments>
+        <dynamicArguments>
+            <argument name="categoryId" value="$1" />
+            <argument name="page" value="$2" />
+        </dynamicArguments>
     </route>
 </routes>

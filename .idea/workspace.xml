@@ -20,24 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Controller/Debug/Magento.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Helper/Data.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/Debug/Magento2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Framework/Router.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Xml/AbstractParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/AbstractParser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/Parser/Xml/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/Routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/routes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/schema/config.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/schema/config.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/schema/routes.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/schema/routes.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/configParser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated/.html" beforeDir="false" afterPath="$PROJECT_DIR$/generated/magento-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated/favicon.ico.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/etc/routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/routes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/etc/schema/routes.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/schema/routes.xsd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +114,8 @@
       <workItem from="1609590416086" duration="341000" />
       <workItem from="1609590996345" duration="3151000" />
       <workItem from="1609595147199" duration="1119000" />
-      <workItem from="1609603523433" duration="4579000" />
+      <workItem from="1609603523433" duration="4903000" />
+      <workItem from="1609780711596" duration="4033000" />
     </task>
     <servers />
   </component>
@@ -199,10 +187,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="539" y="263" key="WebDeployment.AddServerDialog.v.1/0.0.1366.728@0.0.1366.728" timestamp="1607119132621" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609427336652">
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609780740277">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1609427336652" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1609780740277" />
     <state x="396" y="172" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1609433487035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -9,6 +9,7 @@ use App\Helper\Data as DataHelper;
 class Routes extends AbstractParser
 {
     const ROUTES_CONFIG_FILE = '/app/etc/routes.xml';
+    const DYNAMIC_ARGUMENTS_TAG = 'dynamicArguments';
 
     /**
      * @var Loader
@@ -45,20 +46,28 @@ class Routes extends AbstractParser
             foreach ($this->loader->loadXmlFile(self::ROUTES_CONFIG_FILE) as $route) {
                 $attributes = $this->getAttributes($route);
 
-                if (!array_key_exists($attributes['frontName'], $routes)) {
+                if (!array_key_exists($attributes['pattern'], $routes)) {
                     $params['controller'] = $attributes['controller'];
-                    $params['arguments'] = [];
-                    $arguments = $route->children();
 
-                    foreach ($arguments->children() as $argument){
-                        $argumentData = $this->getAttributes($argument);
+                    foreach ($route->children() as $argumentsCategory)
+                    {
+                        $arguments = [];
 
-                        $params['arguments'][$argumentData['name']] = $this->dataHelper->changeType($argumentData['value'], $argumentData['type']); ;
+                        foreach ($argumentsCategory->children() as $argument){
+                            $argumentData = $this->getAttributes($argument);
+                            if (isset($argumentData['type'])) {
+                                $arguments[$argumentData['name']] = $this->dataHelper->changeType($argumentData['value'], $argumentData['type']);
+                            } else {
+                                $arguments[$argumentData['name']] = $argumentData['value'];
+                            }
+                        }
+
+                        $params[$argumentsCategory->getName()] = $arguments;
                     }
 
-                    $routes[$attributes['frontName']] = $params;
+                    $routes[$attributes['pattern']] = $params;
                 } else {
-                    throw new Exception('Route "'. $attributes['frontName'] .'" has been declared more than once');
+                    throw new Exception('Route "'. $attributes['pattern'] .'" has been declared more than once');
                 }
             }
 
@@ -66,5 +75,27 @@ class Routes extends AbstractParser
         }
 
         return $this->routes;
+    }
+
+    /**
+     * @param string $uriPattern
+     * @param array $data
+     * @param string $uri
+     * @return array
+     */
+    public function addDynamicArguments($uriPattern, $data, $uri)
+    {
+        $replacementPattern = implode('/', $data[self::DYNAMIC_ARGUMENTS_TAG]);
+        $dynamicArgumentsSegment = preg_replace("~$uriPattern~", $replacementPattern, $uri);
+        $dynamicArguments = explode('/', $dynamicArgumentsSegment);
+
+        foreach ($data[self::DYNAMIC_ARGUMENTS_TAG] as $argumentName => $mask)
+        {
+            $data['arguments'][$argumentName] = array_shift($dynamicArguments);
+        }
+
+        unset($data[self::DYNAMIC_ARGUMENTS_TAG]);
+
+        return $data;
     }
 }

@@ -43,11 +43,17 @@ class Router
 	{
         $routes = $this->routesParser->getRoutes();
 
-	    if (array_key_exists($this->getURI(), $routes)) {
-            $route = $routes[$this->getURI()];
-            new $route['controller']($route['arguments']);
-        } else {
+        foreach ($routes as $uriPattern => $data) {
+            if (preg_match("~$uriPattern~", $this->uri)) {
+
+                if (array_key_exists(RoutesParser::DYNAMIC_ARGUMENTS_TAG, $data)) {
+                    $data = $this->routesParser->addDynamicArguments($uriPattern, $data, $this->uri);
+                }
+
+                new $data['controller']($data['arguments']);
+            }
 
         }
+
 	}
 }
