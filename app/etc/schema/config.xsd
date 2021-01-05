@@ -7,11 +7,6 @@
             </xs:sequence>
         </xs:complexType>
         <xs:unique name="uniqueCompressSettings">
-            <xs:annotation>
-                <xs:documentation>
-                    Module name must be unique.
-                </xs:documentation>
-            </xs:annotation>
             <xs:selector xpath="compress"/>
             <xs:field xpath="@type1"/>
         </xs:unique>
