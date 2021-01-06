@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Model\Parser\Xml\Routes as RoutesParser;
+use App\Model\Framework\App\Request as RequestModel;
 
 class Router 
 {
@@ -17,34 +18,29 @@ class Router
     private $routesParser;
 
     /**
+     * @var RequestModel
+     */
+    private $request;
+
+    /**
      * Router constructor.
      * @throws Exception
      */
     public function __construct()
 	{
-	    $this->uri = $this->getURI();
-		$this->routesParser = new RoutesParser();
+  		$this->routesParser = new RoutesParser();
+        $this->request = RequestModel::getInstance();
 
 		$this->run();
 	}
 
-    /**
-     * @return string
-     */
-    private function getURI()
-    {
-        if (!empty($_SERVER['REQUEST_URI'])) {
-
-            return trim($_SERVER['REQUEST_URI'], '/');
-        }
-    }
-
     public function run()
 	{
         $routes = $this->routesParser->getRoutes();
+        $uri = $this->request->getUri();
 
         foreach ($routes as $uriPattern => $data) {
-            if (preg_match("~$uriPattern~", $this->uri)) {
+            if (preg_match("~$uriPattern~", $uri)) {
 
                 if (array_key_exists(RoutesParser::DYNAMIC_ARGUMENTS_TAG, $data)) {
                     $data = $this->routesParser->addDynamicArguments($uriPattern, $data, $this->uri);
@@ -52,7 +48,6 @@ class Router
 
                 new $data['controller']($data['arguments']);
             }
-
         }
 
 	}

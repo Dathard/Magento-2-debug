@@ -20,9 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Model/Framework/App/ObjectManager/Singleton.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Framework/App/Request.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/etc/schema/config.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/schema/config.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/etc/schema/routes.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/schema/routes.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/magento-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/page=35.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +38,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PhpTemplates">
-    <option name="NEW_PHP_CLASS_LAST_EXTENSION" value="phtml" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -70,19 +70,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\etc" />
-      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Stylization\code" />
-      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Framework" />
-      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\config\schema" />
-      <recent name="C:\Users\14dim\Desktop\mvc-shop-master\block" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app" />
       <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Framework" />
       <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Parser" />
       <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model" />
       <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Block" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Framework\App" />
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\etc" />
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Stylization\code" />
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\app\Model\Framework" />
+      <recent name="C:\Users\14dim\Desktop\OpenServer\domains\debug.dathard\config\schema" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -117,6 +117,7 @@
       <workItem from="1609789363705" duration="302000" />
       <workItem from="1609872668995" duration="15000" />
       <workItem from="1609876397783" duration="916000" />
+      <workItem from="1609955036512" duration="7001000" />
     </task>
     <servers />
   </component>
@@ -148,18 +149,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1609427971818" />
-    <state x="444" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609607736446">
+    <state x="444" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609959110973">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="444" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1609607736446" />
+    <state x="444" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1609959110973" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609607472473">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1609607472473" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609593381513">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609961433205">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1609593381513" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1609961433205" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1607119446321">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -168,10 +169,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609872686568" />
-    <state x="411" y="87" key="NewPhpClassDialog" timestamp="1607169781414">
+    <state x="411" y="87" key="NewPhpClassDialog" timestamp="1609959175297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="411" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1607169781414" />
+    <state x="411" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1609959175297" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1607625182299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -196,18 +197,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="396" y="172" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1609433487035" />
-    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1609607861416">
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1609956220331">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1609607861416" />
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1609956220331" />
     <state x="505" y="94" key="ftp.server.browser" timestamp="1607119393150">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="505" y="94" key="ftp.server.browser/0.0.1366.728@0.0.1366.728" timestamp="1607119393150" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1609592656341">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1609962362237">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1609592656341" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1609962362237" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1607624994797">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
