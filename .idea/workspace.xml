@@ -20,12 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Model/Framework/App/ObjectManager/Singleton.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Framework/App/Request.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Xml/AbstractParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/AbstractParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Xml/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/Routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated/magento-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated/page=35.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <workItem from="1609789363705" duration="302000" />
       <workItem from="1609872668995" duration="15000" />
       <workItem from="1609876397783" duration="916000" />
-      <workItem from="1609955036512" duration="7001000" />
+      <workItem from="1609955036512" duration="7243000" />
     </task>
     <servers />
   </component>

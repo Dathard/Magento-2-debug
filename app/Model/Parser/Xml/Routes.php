@@ -12,6 +12,11 @@ class Routes extends AbstractParser
     const DYNAMIC_ARGUMENTS_TAG = 'dynamicArguments';
 
     /**
+     * @var array
+     */
+    private static $instances = [];
+
+    /**
      * @var Loader
      */
     private $loader;
@@ -29,7 +34,7 @@ class Routes extends AbstractParser
     /**
      * Routes constructor.
      */
-    public function __construct()
+    protected function __construct()
     {
         $this->loader = new Loader();
         $this->dataHelper = new DataHelper();

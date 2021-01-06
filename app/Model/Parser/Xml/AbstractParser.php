@@ -2,7 +2,9 @@
 
 namespace App\Model\Parser\Xml;
 
-class AbstractParser
+use App\Model\Framework\App\ObjectManager\Singleton;
+
+class AbstractParser extends Singleton
 {
     /**
      * @param $tag
