@@ -1,70 +1,130 @@
 <?php
 
-define('ROOT', dirname(__FILE__));
-//require_once(ROOT.'/config/routes.xml');
+class XML2Array {
 
-$path = ROOT.'/app/etc/config.xml';
+    private static $xml = null;
+    private static $encoding = 'UTF-8';
 
-$config = simplexml_load_file($path);
+    /**
+     * Initialize the root XML node [optional]
+     * @param $version
+     * @param $encoding
+     * @param $format_output
+     */
+    public static function init($version = '1.0', $encoding = 'UTF-8', $format_output = true) {
+        self::$xml = new DOMDocument($version, $encoding);
+        self::$xml->formatOutput = $format_output;
+        self::$encoding = $encoding;
+    }
 
-$configuration = [];
-
-foreach ($config->children() as $section) {
-    $groups = [];
-
-    foreach ($section->children() as $group) {
-        $fields = [];
-
-        foreach ($group->children() as $field) {
-
-            $attributes = getField($field);
-
-            switch ($attributes['type']) {
-                case 'int':
-                    $value = (int)$attributes['value'];
-                    break;
-                case 'string':
-                    $value = (string)$attributes['value'];
-                    break;
-                case 'bool':
-                    $value = (bool)$attributes['value'];
-                    break;
-                default:
-                    throw new Exception('Error');
+    /**
+     * Convert an XML to Array
+     * @param string $node_name - name of the root node to be converted
+     * @param array $arr - aray to be converterd
+     * @return DOMDocument
+     */
+    public static function &createArray($input_xml) {
+        $xml = self::getXMLRoot();
+        if(is_string($input_xml)) {
+            $parsed = $xml->loadXML($input_xml);
+            if(!$parsed) {
+                throw new Exception('[XML2Array] Error parsing the XML string.');
             }
-
-            $fields[$attributes['id']] = $value;
+        } else {
+            if(get_class($input_xml) != 'DOMDocument') {
+                throw new Exception('[XML2Array] The input XML object should be of type: DOMDocument.');
+            }
+            $xml = self::$xml = $input_xml;
         }
-
-        $groups[$group->getName()] = $fields;
+        $array[$xml->documentElement->tagName] = self::convert($xml->documentElement);
+        self::$xml = null;    // clear the xml node in the class for 2nd time use.
+        return $array;
     }
 
-    $configuration[$section->getName()] = $groups;
-}
+    /**
+     * Convert an Array to XML
+     * @param mixed $node - XML as a string or as an object of DOMDocument
+     * @return mixed
+     */
+    private static function &convert($node) {
+        $output = array();
 
-function getField($tag)
-{
-    $attributes = [];
+        switch ($node->nodeType) {
+            case XML_CDATA_SECTION_NODE:
+                $output['@cdata'] = trim($node->textContent);
+                break;
 
-    foreach($tag->attributes() as $name => $value) {
-        $attributes[$name] = $value->__toString();
+            case XML_TEXT_NODE:
+                $output = trim($node->textContent);
+                break;
+
+            case XML_ELEMENT_NODE:
+
+                // for each child node, call the covert function recursively
+                for ($i=0, $m=$node->childNodes->length; $i<$m; $i++) {
+                    $child = $node->childNodes->item($i);
+                    $v = self::convert($child);
+                    if(isset($child->tagName)) {
+                        $t = $child->tagName;
+
+                        // assume more nodes of same kind are coming
+                        if(!isset($output[$t])) {
+                            $output[$t] = array();
+                        }
+                        $output[$t][] = $v;
+                    } else {
+                        //check if it is not an empty text node
+                        if($v !== '') {
+                            $output = $v;
+                        }
+                    }
+                }
+
+                if(is_array($output)) {
+                    // if only one node of its kind, assign it directly instead if array($value);
+                    foreach ($output as $t => $v) {
+                        if(is_array($v) && count($v)==1) {
+                            $output[$t] = $v[0];
+                        }
+                    }
+                    if(empty($output)) {
+                        //for empty nodes
+                        $output = '';
+                    }
+                }
+
+                // loop through the attributes and collect them
+                if($node->attributes->length) {
+                    $a = array();
+                    foreach($node->attributes as $attrName => $attrNode) {
+                        $a[$attrName] = (string) $attrNode->value;
+                    }
+                    // if its an leaf node, store the value in @value instead of directly storing it.
+                    if(!is_array($output)) {
+                        $output = [];
+                        $output = array('@value' => $output);
+                    }
+                    $output['@attributes'] = $a;
+                }
+                break;
+        }
+        return $output;
     }
 
-    return $attributes;
+    /*
+     * Get the root XML node, if there isn't one, create it.
+     */
+    private static function getXMLRoot(){
+        if(empty(self::$xml)) {
+            self::init();
+        }
+        return self::$xml;
+    }
 }
 
-print_r($configuration);
 
-die();
-
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-define('ROOT', dirname(__FILE__));
-require_once(ROOT.'/components/Autoload.php');
-
-ob_start();
-
-$router = new Router();
-$router->run();
+$ssString = file_get_contents('layout/test.xml');
+$asArray2 = XML2Array::createArray($ssString);
+echo "<pre>";
+print_r($asArray2);
+exit;
