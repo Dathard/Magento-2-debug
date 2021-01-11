@@ -40,6 +40,17 @@ class Routes extends AbstractParser
         $this->dataHelper = new DataHelper();
     }
 
+    protected function getAttributes($tag)
+    {
+        $attributes = [];
+
+        foreach($tag->attributes() as $name => $value) {
+            $attributes[$name] = $value->__toString();
+        }
+
+        return $attributes;
+    }
+
     /**
      * @return array
      */

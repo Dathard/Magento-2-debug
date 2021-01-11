@@ -7,14 +7,14 @@
     <body>
         <header>
             <block class="Plumrocket\CallForPrice\Block\Popup" template="Plumrocket_CallForPrice::popup.phtml">
+                valie_RRRRsss
             </block>
-            <block class="Plumrocket\CallForPrice\Block\Popup2" template="Plumrocket_CallForPrice::popup.phtml2" />
+            <block class="Plumrocket\CallForPrice\Block\Popup2" template="Plumrocket_CallForPrice::popup.phtml2" >
+                <arguments>
+                    <argument name="magentoVersion" type="int" value="2" />
+                    <argument name="magentoVersion2" type="int" value="2" />
+                </arguments>
+            </block>
         </header>
-        <content>
-
-        </content>
-        <footer>
-            <block class="Plumrocket\CallForPrice\Block\Popup" template="Plumrocket_CallForPrice::popup.phtml" />
-        </footer>
     </body>
 </page>
