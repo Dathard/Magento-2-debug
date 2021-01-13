@@ -20,18 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31af98d9-51d5-45c7-bc50-9072b56952c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/Prepare/ArgumentsTag.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/Prepare/ContainerTag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controller/Debug/Magento.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/Debug/Magento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Framework/Loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Framework/Loader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Xml/AbstractParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/Parser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Xml/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/Routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/etc/routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/routes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/configParser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Framework/View/Layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Framework/View/Layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Xml/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Parser/Xml/Parser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Xml/Prepare/ArgumentsTag.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Xml/Prepare/ContainerTag.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +124,8 @@
       <workItem from="1610345525171" duration="46000" />
       <workItem from="1610383715293" duration="3906000" />
       <workItem from="1610431403369" duration="50000" />
-      <workItem from="1610560060663" duration="5983000" />
+      <workItem from="1610560060663" duration="6017000" />
+      <workItem from="1610567697650" duration="515000" />
     </task>
     <servers />
   </component>

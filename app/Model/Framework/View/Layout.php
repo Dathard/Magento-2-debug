@@ -4,6 +4,7 @@ namespace App\Model\Framework\View;
 
 use App\Model\Framework\Loader;
 use App\Model\Parser\Xml\Parser as XmlParser;
+use App\Model\Parser\Xml\PrepareXml;
 
 class Layout
 {
@@ -22,10 +23,16 @@ class Layout
      */
     private $xmlParser;
 
+    /**
+     * @var PrepareXml
+     */
+    private $prepareXml;
+
     public function __construct()
     {
         $this->loader = new Loader();
         $this->xmlParser = new XmlParser();
+        $this->prepareXml = new PrepareXml();
     }
 
     /**
@@ -46,26 +53,9 @@ class Layout
         }
 
         $layout = $this->loader->loadFileContent(self::LAYOUT_DIRECTORY . $this->handle . '.xml');
-
-
-        $layout = preg_replace(
-            array(
-                '/\>[^\S ]+/s',
-                '/[^\S ]+\</s',
-                '/(\s)+/s',
-                '/<!--(?![^<]*noindex)(.*?)-->/'
-            ),
-            array(
-                '>',
-                '<',
-                '\\1',
-                ''
-            ),
-            $layout
-        );
-
-        $layout = $this->xmlParser->prepareArgumentsTag($layout);
-        $layout = $this->xmlParser->prepareContainerTag($layout);
+        $layout = $this->prepareXml->compress($layout);
+        $layout = $this->prepareXml->prepareArgumentsTag($layout);
+        $layout = $this->prepareXml->prepareContainerTag($layout);
         $layout = $this->xmlParser->parseToArray($layout);
 
         var_dump($layout);

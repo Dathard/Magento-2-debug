@@ -2,24 +2,11 @@
 
 namespace App\Model\Parser\Xml;
 
-use App\Model\Parser\Xml\Prepare\ArgumentsTag as PrepareArgumentsTag;
-use App\Model\Parser\Xml\Prepare\ContainerTag as PrepareContainerTag;
-
 class Parser
 {
     private $xml = null;
 
     private $encoding = 'UTF-8';
-
-    /**
-     * @var PrepareArgumentsTag
-     */
-    private $prepareArgumentsTag;
-
-    /**
-     * @var PrepareContainerTag
-     */
-    private $prepareContainerTag;
 
     /**
      * Parser constructor.
@@ -32,9 +19,6 @@ class Parser
         $encoding = 'UTF-8',
         $format_output = true
     ) {
-        $this->prepareArgumentsTag = new PrepareArgumentsTag();
-        $this->prepareContainerTag = new PrepareContainerTag();
-
         $this->init($version, $encoding, $format_output);
     }
 
@@ -51,24 +35,6 @@ class Parser
         $this->xml = new \DOMDocument($version, $encoding);
         $this->xml->formatOutput = $format_output;
         $this->encoding = $encoding;
-    }
-
-    /**
-     * @param string $xml
-     * @return string
-     */
-    public function prepareArgumentsTag ($xml = '')
-    {
-        return $this->prepareArgumentsTag->prepareArgumentsTag($xml);
-    }
-
-    /**
-     * @param string $xml
-     * @return mixed
-     */
-    public function prepareContainerTag ($xml = '')
-    {
-        return $this->prepareContainerTag->prepareContainerTag($xml);
     }
 
     /**

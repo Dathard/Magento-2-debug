@@ -37,8 +37,8 @@ class Magento extends AbstractController
 
     public function execute()
     {
-//        $this->layout->setHandle('magento_2_debug');
-//        $this->layout->executeRenderer();
+        $this->layout->setHandle('magento_2_debug');
+        $this->layout->executeRenderer();
 
         $this->showContent($this->block->toHtml($this->block));
     }
