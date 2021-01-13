@@ -2,11 +2,11 @@
 
 namespace App\Model\Parser\Xml;
 
-use App\Model\Parser\Xml\AbstractParser;
+use App\Model\Parser\Xml\Parser as XmlParser;
 use App\Model\Framework\Loader;
 use App\Helper\Data as DataHelper;
 
-class Routes extends AbstractParser
+class Routes extends XmlParser
 {
     const ROUTES_CONFIG_FILE = '/app/etc/routes.xml';
     const DYNAMIC_ARGUMENTS_TAG = 'dynamicArguments';
@@ -34,7 +34,7 @@ class Routes extends AbstractParser
     /**
      * Routes constructor.
      */
-    protected function __construct()
+    public function __construct()
     {
         $this->loader = new Loader();
         $this->dataHelper = new DataHelper();

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <head>
+        <css src="test.css" />
+    </head>
+    <body>
+        <container name="header">
+            <block class="App\Block\Template" template="header.phtml" />
+        </container>
+        <container name="sidebar">
+            <block class="App\Block\Template" template="sidebar.phtml" />
+        </container>
+        <container name="content">
+            <block class="App\Block\Template" template="magento2/debug.phtml" />
+        </container>
+        <container name="footer">
+            <block class="App\Block\Template" template="footer.phtml" />
+        </container>
+    </body>
+</page>

@@ -2,22 +2,47 @@
 
 namespace App\Model\Parser\Xml;
 
-use App\Model\Framework\App\ObjectManager\Singleton;
+use App\Model\Parser\Xml\Prepare\ArgumentsTag as PrepareArgumentsTag;
+use App\Model\Parser\Xml\Prepare\ContainerTag as PrepareContainerTag;
 
-class AbstractParser
+class Parser
 {
     private $xml = null;
 
     private $encoding = 'UTF-8';
 
+    /**
+     * @var PrepareArgumentsTag
+     */
+    private $prepareArgumentsTag;
+
+    /**
+     * @var PrepareContainerTag
+     */
+    private $prepareContainerTag;
+
+    /**
+     * Parser constructor.
+     * @param string $version
+     * @param string $encoding
+     * @param bool $format_output
+     */
     public function __construct(
         $version = '1.0',
         $encoding = 'UTF-8',
         $format_output = true
     ) {
+        $this->prepareArgumentsTag = new PrepareArgumentsTag();
+        $this->prepareContainerTag = new PrepareContainerTag();
+
         $this->init($version, $encoding, $format_output);
     }
 
+    /**
+     * @param string $version
+     * @param string $encoding
+     * @param bool $format_output
+     */
     public function init(
         $version = '1.0',
         $encoding = 'UTF-8',
@@ -28,7 +53,29 @@ class AbstractParser
         $this->encoding = $encoding;
     }
 
-    public function createToArray($input_xml)
+    /**
+     * @param string $xml
+     * @return string
+     */
+    public function prepareArgumentsTag ($xml = '')
+    {
+        return $this->prepareArgumentsTag->prepareArgumentsTag($xml);
+    }
+
+    /**
+     * @param string $xml
+     * @return mixed
+     */
+    public function prepareContainerTag ($xml = '')
+    {
+        return $this->prepareContainerTag->prepareContainerTag($xml);
+    }
+
+    /**
+     * @param $input_xml
+     * @return mixed
+     */
+    public function parseToArray($input_xml)
     {
         $xml = $this->getXMLRoot();
         if (is_string($input_xml)) {
@@ -48,9 +95,13 @@ class AbstractParser
         return $array;
     }
 
+    /**
+     * @param $node
+     * @return array|mixed|string
+     */
     private function convert($node)
     {
-        $output = array();
+        $output = [];
 
         switch ($node->nodeType) {
             case XML_CDATA_SECTION_NODE:
@@ -77,7 +128,7 @@ class AbstractParser
                     }
                 }
 
-                if(is_array($output)) {
+                if (is_array($output)) {
                     foreach ($output as $t => $v) {
                         if (is_array($v) && count($v)==1) {
                             $output[$t] = $v[0];
@@ -109,7 +160,11 @@ class AbstractParser
         return $output;
     }
 
-    private function getXMLRoot(){
+    /**
+     * @return null
+     */
+    private function getXMLRoot()
+    {
         if (empty($this->xml)) {
             self::init();
         }

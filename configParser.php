@@ -109,16 +109,12 @@ $ssString = file_get_contents('layout/test.xml');
 
 
 
-$ssString = preg_replace(
-    '<argument.*name=[\'\"]([A-Za-z0-9]+)[\'\"].*type=[\'\"]([A-Za-z0-9]+)[\'\"].*value=[\'\"]([A-Za-z0-9]+)[\'\"].*/>',
-    '$1 type="$2" value="$3" /',
-    $ssString
-);
+$ssString =
 
 
-$asArray2 = new App\Model\Parser\Xml\AbstractParser();
+$asArray2 = new App\Model\Parser\Xml\Parser();
 
-$asArray2 = $asArray2->createArray($ssString);
+$asArray2 = $asArray2->parseToArray($ssString);
 echo "<pre>";
 print_r($asArray2);
 exit;

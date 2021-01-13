@@ -5,9 +5,10 @@
             <argument name="magentoVersion" type="int" value="1" />
         </arguments>
     </route>
-    <route pattern="debug/magento-2"  controller="App\Controller\Debug\Magento">
+    <route pattern="magento-2/debug"  controller="App\Controller\Debug\Magento">
         <arguments>
             <argument name="magentoVersion" type="int" value="2" />
+            <argument name="handle" type="string" value="magento_2_debug"/>
         </arguments>
     </route>
 

@@ -28,7 +28,7 @@ class Router
      */
     public function __construct()
 	{
-	    $this->routesParser = RoutesParser::getInstance();
+	    $this->routesParser = new RoutesParser();
         $this->request = RequestModel::getInstance();
 
 		$this->run();
