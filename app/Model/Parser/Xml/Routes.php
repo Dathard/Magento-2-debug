@@ -62,7 +62,7 @@ class Routes extends XmlParser
             foreach ($this->loader->loadXmlFile(self::ROUTES_CONFIG_FILE) as $route) {
                 $attributes = $this->getAttributes($route);
 
-                if (!array_key_exists($attributes['pattern'], $routes)) {
+                if (!array_key_exists($attributes['name'], $routes)) {
                     $params['controller'] = $attributes['controller'];
 
                     foreach ($route->children() as $argumentsCategory)
