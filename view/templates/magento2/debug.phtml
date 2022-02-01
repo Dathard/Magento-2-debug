@@ -194,7 +194,7 @@ EOD;
 
 <div class="section">
     <div class="header">
-        <h2>Вивід template path hints</h2>
+        <h2>Вивід template path hints M2</h2>
     </div>
     <div class="body">
         <p>Є кілька способів вивести template path hints в Magento:</p>
@@ -216,6 +216,23 @@ EOD;
                 ?>
             </li>
         </ul>
+    </div>
+</div>
+
+<div class="section">
+    <div class="header">
+        <h2>Вивід profiler по GET-параметру М2</h2>
+    </div>
+    <div class="body">
+        <p>На початку файлу <b>app/bootstrap.php</b> вставте:</p>
+        <?php
+        $code = <<<'EOD'
+if (isset($_GET['profiler']) && $_GET['profiler'] == 1) {
+    $_SERVER['MAGE_PROFILER'] = 'html';
+}
+EOD;
+        echo $block->parsePhpCode($code, true);
+        ?>
     </div>
 </div>
 

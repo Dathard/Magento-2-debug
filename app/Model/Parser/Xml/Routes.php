@@ -40,7 +40,7 @@ class Routes extends AbstractParser
      */
     public function getRoutes()
     {
-        if (!sizeof($this->routes)) {
+        if (!sizeof((array) $this->routes)) {
             $routes = [];
 
             foreach ($this->loader->loadXmlFile(self::ROUTES_CONFIG_FILE) as $route) {
