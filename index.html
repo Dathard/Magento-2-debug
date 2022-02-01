@@ -1,0 +1,542 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Magento 2 debug</title>
+  <meta name="description" content="Magento 2 debug">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Arvo" />
+  <style>
+    body
+    {
+      font-family: Arvo, sans-serif;
+
+      margin: 0;
+
+      color: #565656;
+      background: #fbfaf7;
+    }
+
+    img
+    {
+      max-width: 100%;
+    }
+
+    .code
+    {
+      font-family: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal;
+      font-size: 14px;
+
+      overflow: auto;
+      overflow-y: hidden;
+
+      width: 97%;
+      padding: 12px;
+
+      color: #00b;
+      border: 1px solid #d7d8c8;
+      border-radius: 4px;
+      background: #f8f8f8;
+    }
+
+    .code .kd
+    {
+      color: #070;
+    }
+
+    .code .s2
+    {
+      color: #d00;
+    }
+
+    .code.copy
+    {
+      position: relative;
+
+      display: inline-block;
+
+      cursor: pointer;
+    }
+
+    .code.copy:after
+    {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      font-weight: bolder;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+
+      background: rgb(23 23 23 / 88%);
+      color: #fff;
+    }
+
+    .code.copy:hover:after
+    {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      content: 'Клікніть щоб скопіювати код';
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    .code.copy.copy-success:after
+    {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      content: '\2714';
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 25px;
+
+      background: #046104c9;
+    }
+
+    code
+    {
+      word-spacing: -4px;
+    }
+
+    .code textarea
+    {
+      display: none;
+    }
+
+    h2
+    {
+      font-size: 25px;
+      font-weight: normal;
+
+      padding-bottom: 5px;
+
+      border-bottom: 1px solid #ccc;
+    }
+
+    body > .container
+    {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+
+      width: 100%;
+
+      background: none;
+
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+
+    .left-sidebar
+    {
+      width: 270px;
+    }
+
+    .left-sidebar .navigation
+    {
+      position: fixed;
+
+      width: 270px;
+      height: 100%;
+      max-height: 100vh;
+
+      border: 1px solid #000;
+      -webkit-border-top-right-radius: 4px;
+      -webkit-border-bottom-right-radius: 4px;
+      background-color: #171717;
+    }
+
+    .left-sidebar .navigation ul
+    {
+      margin: 0 0 12px;
+      padding: 5px 0;
+
+      list-style: none;
+    }
+
+    .left-sidebar .navigation ul li
+    {
+      padding-right: 8px;
+    }
+
+    .left-sidebar .navigation li a
+    {
+      font-size: 15px;
+      line-height: 1.8;
+
+      display: block;
+
+      width: 100%;
+      padding: 6px 0;
+      padding-left: 12px;
+
+      cursor: pointer;
+      text-decoration: none;
+
+      color: #fdfdfb;
+    }
+
+    .left-sidebar .navigation li a:hover
+    {
+      background: -o-linear-gradient(bottom, #af0011 0%, #820011 100%);
+      background:    -webkit-gradient(linear, left bottom, left top, from(#af0011), to(#820011));
+      background:    linear-gradient(to top, #af0011 0%, #820011 100%);
+    }
+
+    #content
+    {
+      width: calc(100% - 310px);
+      min-height: 100vh;
+
+      color: #232323;
+    }
+
+    #content > .section
+    {
+      width: 70%;
+      margin: 10px 0;
+      padding: 15px;
+
+      border: 1px solid #f2f2f2;
+      border-radius: 3px;
+      background: #fff;
+    }
+
+    #content
+    {
+      line-height: 1.5rem;
+    }
+    .underline
+    {
+      text-decoration: underline;
+    }
+
+    #content ul .code{
+      margin-left: -40px;
+      width: calc(97% + 40px);
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body><div class="container">
+  <div id="left-sidebar" class="left-sidebar">
+    <div class="navigation">
+      <ul></ul>
+    </div>
+  </div><div id="content"><div class="section">
+  <div class="header">
+    <h2>Рекомендації</h2>
+  </div>
+  <div class="body">
+    <p class="underline">Використовуйте echo and var_dump()</p>
+    <ul>
+      <li>
+        <p>Якщо ви хочете дізнатись вміст деякого змінної то використовуйте</p>
+        <div class="code copy" onclick="copytext(this)">
+          <code>
+        <span>
+            var_dump<span class="kd">(</span>$array<span class="kd">)</span><span class="kd">;</span>exit<span class="kd">(</span><span class="kd">)</span><span class="kd">;</span>        </span>
+          </code>
+          <textarea class="code">var_dump($array);exit();</textarea>
+        </div>
+
+      </li>
+      <li>
+        <p>Якщо ви хочете вивести об`єкт</p>
+        <div class="code copy" onclick="copytext(this)">
+          <code>
+        <span>
+            var_dump<span class="kd">(</span>$product<span class="kd">-></span>debug<span class="kd">(</span><span class="kd">)</span><span class="kd">)</span><span class="kd">;</span>exit<span class="kd">(</span><span class="kd">)</span><span class="kd">;</span>        </span>
+          </code>
+          <textarea class="code">var_dump($product->debug());exit();</textarea>
+        </div>
+
+      </li>
+      <li>
+        <p>Якщо хочете дізнатись sql-запит з колекції:</p>
+        <div class="code copy" onclick="copytext(this)">
+          <code>
+        <span>
+            echo $collection<span class="kd">-></span>getSelect<span class="kd">(</span><span class="kd">)</span><span class="kd">;</span>exit<span class="kd">(</span><span class="kd">)</span><span class="kd">;</span>        </span>
+          </code>
+          <textarea class="code">echo $collection->getSelect();exit();</textarea>
+        </div>
+
+      </li>
+    </ul>
+    <p>Перед тим як дебажити потрібно знайти місце(так мовити вхідну точку) звідки це почати. Найкращий варіант це помилка(php, або js в консолі). Якщо помилки не має, то потрібно перевірити чи включений вивід помилок і дізнатись в якому mode <a href="https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/magento-modes.html" target="_blank">(About Magento modes)</a> на даний момент magento.</p>
+  </div>
+</div>
+
+  <div class="section">
+    <div class="header">
+      <h2>Корисні php команди для debug</h2>
+    </div>
+    <div class="body">
+      <ul>
+        <li><p><b>exit() or die()</b> - зупиняє подальше виконання скрипта</p></li>
+        <li><p><b>get_class()</b> - повертає ім’я класу даного об’єкта</p></li>
+        <li><p><b>gettype()</b> - повертає тип змінної</p></li>
+        <li><p><b>is_*</b> - для конкретної провірки типа</p></li>
+        <li><p><b>file_put_contents()</b> - використовуємо як логування даних</p></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="header">
+      <h2>Визначення версії Magento 2</h2>
+    </div>
+    <div class="body">
+      <p>Є кілька способів дізнатись версію Magento:</p>
+      <ul>
+        <li>
+          <p>В footer адмінки</p>
+        </li>
+        <li>
+          <p>За допомогою Magento CLI</p>
+          <div class="code copy" onclick="copytext(this)">
+            <code>
+        <span>
+            php bin/magento --version        </span>
+            </code>
+            <textarea class="code">php bin/magento --version</textarea>
+          </div>
+
+        </li>
+        <li>
+          <p>За допомогою URL-адреси</p>
+          <div class="code">
+            <code>
+        <span>
+            http:///magento_version        </span>
+            </code>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="header">
+      <h2>Як отримати доступ до адмінки</h2>
+    </div>
+    <div class="body">
+      <p>Якщо у вас не має доступу до адмінки то ви можете створити собі нового користувача за допомогою Magento CLI</p>
+      <div class="code copy" onclick="copytext(this)">
+        <code>
+                            <span>
+                                <span>php bin/magento admin:user:create</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-user</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-password</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root_password"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-email</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root@gmail.com"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-firstname</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root"</span>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color: #0000BB">--admin-lastname</span>
+                                <span style="color: #007700">=</span>
+                                <span style="color: #DD0000">"root"</span>
+                            </span>
+        </code>
+        <textarea class="code">php bin/magento admin:user:create --admin-user="root" --admin-password="root_password" --admin-email="root@gmail.com" --admin-firstname="root" --admin-lastname="root"</textarea>
+      </div>
+      <p>Або зламати доступ за допогомою ftp. Для цього слід внести правки в файлі <b>/vendor/magento/module-user/Model/User.php</b>.</p>
+      <div class="code">
+        <code>
+        <span>
+            <span class="kd">public</span> <span class="kd">function</span> authenticate <span class="kd">(</span> $username <span class="kd">,</span> $password <span class="kd">)</span><br><span class="kd">{</span><br>&nbsp;&nbsp;&nbsp;  <span class="kd">...</span><br>&nbsp;&nbsp;&nbsp;  $this <span class="kd">-></span> loadByUsername <span class="kd">(</span> $username <span class="kd">)</span><span class="kd">;</span><br>&nbsp;&nbsp;&nbsp;  $this <span class="kd">-></span> load <span class="kd">(</span> 1 <span class="kd">)</span><span class="kd">;</span><br>&nbsp;&nbsp;&nbsp;  $sensitive<span class="kd"> = </span>$config ? $username == $this <span class="kd">-></span> getUsername <span class="kd">(</span><span class="kd">)</span><span class="kd">:</span> true <span class="kd">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kd">if</span><span class="kd">(</span> $sensitive <span class="kd">&&</span> $this <span class="kd">-></span> getId <span class="kd">(</span><span class="kd">)</span> <span class="kd">)</span> <span class="kd">{</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $result<span class="kd"> = </span>$this <span class="kd">-></span> verifyIdentity <span class="kd">(</span> $password <span class="kd">)</span><span class="kd">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $result<span class="kd"> = </span>true <span class="kd">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">}</span><br>&nbsp;&nbsp;&nbsp;  <span class="kd">...</span><br><span class="kd">}</span>        </span>
+        </code>
+      </div>
+
+      <p>Після входу завжди відкатайте свої зміни(ніколи не залишайте їх, це дуже небезпечно)</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="header">
+      <h2>Основні файли конфігурації</h2>
+    </div>
+    <div class="body">
+      <ul>
+        <li>
+          <p><b>app/etc/env.php</b> - містить налаштування, специфічні для середовища встановлення(шлях до адмінки, доступи до DB та іншу ін-фу про різні підключені сервіси, наприклад системи кешування(redis, varnish))</p>
+        </li>
+        <li>
+          <p><b>app/etc/config.php</b>- містить перелік встановлених модулів, тем та мовних пакетів; і спільні настройки конфігурації. Детальніше про даний файл можна глянути за
+            <a href="https://devdocs.magento.com/guides/v2.3/config-guide/config/config-php.html" target="_blank">цим посиланням</a></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="header">
+      <h2>Вивід layout усієї сторінки М1</h2>
+    </div>
+    <div class="body">
+      <p>Ви можете отримати повний xml, який використовується як layout сторінки в <b>Mage_Core_Controller_Varien_Action::generirajLayoutXml</b>.</p>
+      <p>Якщо вам для цілей налагодження потрібно вивести layout сторінки, ви можете додати наступний код у згаданому вище методі безпосередньо перед оператором return.</p>
+      <div class="code copy" onclick="copytext(this)">
+        <code>
+        <span>
+            if <span class="kd">(</span> isset<span class="kd">(</span>$_GET<span class="kd">[</span><span class="s2">"getLayouts"</span><span class="kd">]</span><span class="kd">)</span> <span class="kd">)</span><span class="kd">{</span><br>&nbsp;&nbsp;&nbsp; echo<span class="kd">(</span>$this<span class="kd">-></span>getLayout<span class="kd">(</span><span class="kd">)</span><span class="kd">-></span>getXmlString<span class="kd">(</span><span class="kd">)</span><span class="kd">)</span><span class="kd">;</span> die<span class="kd">;</span><br><span class="kd">}</span>        </span>
+        </code>
+        <textarea class="code">if ( isset($_GET["getLayouts"]) ){
+    echo($this->getLayout()->getXmlString()); die;
+}</textarea>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="header">
+      <h2>Вивід layout усієї сторінки М2</h2>
+    </div>
+    <div class="body">
+      <p>У файлі <b>vendor/magento/framework/View/Layout.php</b> методі <b>generateXml()</b> вставте:</p>
+      <div class="code copy" onclick="copytext(this)">
+        <code>
+        <span>
+            if <span class="kd">(</span> isset<span class="kd">(</span>$_GET<span class="kd">[</span><span class="s2">"getLayouts"</span><span class="kd">]</span><span class="kd">)</span> <span class="kd">)</span><span class="kd">{</span><br>&nbsp;&nbsp;&nbsp; echo<span class="kd">(</span>$xml<span class="kd">-></span>asXML<span class="kd">(</span><span class="kd">)</span><span class="kd">)</span><span class="kd">;</span> die<span class="kd">;</span><br><span class="kd">}</span>        </span>
+        </code>
+        <textarea class="code">if ( isset($_GET["getLayouts"]) ){
+    echo($xml->asXML()); die;
+}</textarea>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="header">
+      <h2>Вивід template path hints M2</h2>
+    </div>
+    <div class="body">
+      <p>Є кілька способів вивести template path hints в Magento:</p>
+      <ul>
+        <li>
+          <p>З допомогою панелі адміністратора. Для цього потрібно перейти за шляхом <b>Stores-&gt;Settings-&gt;Configuration-&gt;Advanced-&gt;Developer-&gt;Debug</b>.</p>
+        </li>
+        <li>
+          <p>Через ftp. Для цього слід внести правки в функцію <b>afterCreate()</b> в файлі <b>vendor/magento/module-developer/Model/TemplateEngine/Plugin/DebugHints.php</b>.</p>
+          <div class="code copy" onclick="copytext(this)">
+            <code>
+        <span>
+            if<span class="kd">(</span> isset<span class="kd">(</span>$_GET<span class="kd">[</span><span class="s2">"templatehints"</span><span class="kd">]</span><span class="kd">)</span> <span class="kd">)</span><span class="kd">{</span><br>&nbsp;&nbsp;&nbsp; return $this<span class="kd">-></span>debugHintsFactory<span class="kd">-></span>create<span class="kd">(</span><span class="kd">[</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">"subject"</span> <span class="kd">=></span> $invocationResult<span class="kd">,</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">"showBlockHints"</span> <span class="kd">=></span> 1 <span class="kd">]</span><span class="kd">)</span><span class="kd">;</span><br><span class="kd">}</span>        </span>
+            </code>
+            <textarea class="code">if( isset($_GET["templatehints"]) ){
+    return $this->debugHintsFactory->create([
+        "subject" => $invocationResult,
+        "showBlockHints" => 1 ]);
+}</textarea>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="header">
+      <h2>Вивід profiler по GET-параметру М2</h2>
+    </div>
+    <div class="body">
+      <p>На початку файлу <b>app/bootstrap.php</b> вставте:</p>
+      <div class="code copy" onclick="copytext(this)">
+        <code>
+        <span>
+            if <span class="kd">(</span>isset<span class="kd">(</span>$_GET<span class="kd">[</span><span class="s2"><span class="s2">'profiler'</span></span><span class="kd">]</span><span class="kd">)</span> <span class="kd">&&</span> $_GET<span class="kd">[</span><span class="s2"><span class="s2">'profiler'</span></span><span class="kd">]</span> == 1<span class="kd">)</span> <span class="kd">{</span><br>&nbsp;&nbsp;&nbsp; $_SERVER<span class="kd">[</span><span class="s2">'MAGE_PROFILER'</span><span class="kd">]</span><span class="kd"> = </span><span class="s2">'html'</span><span class="kd">;</span><br><span class="kd">}</span>        </span>
+        </code>
+        <textarea class="code">if (isset($_GET['profiler']) && $_GET['profiler'] == 1) {
+    $_SERVER['MAGE_PROFILER'] = 'html';
+}</textarea>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="header">
+      <h2>Створення кастомного html темплейта для повідомлень</h2>
+      <h4>Даний спосіб дозволяє обійти екранізацію html тегів повідомлення маджентою</h4>
+    </div>
+    <div class="body">
+      <p>
+        Маджента дефолтно екранізує весь контант повідомлень і в резуьтаті при спробі вивести таким чином html код він буде мати такий вигляд:
+      </p>
+      <img alt="Це все втекло" src="https://store.fooman.co.nz/blog/user/pages/posts/08.displaying-complex-error-messages-in-magento-2/its-all-escaped.png">
+      <p>На щастя в мадженті є вбудоване рішення для використання власних темплейтів повідомлень.</p>
+      <p>У <b>\Magento\Framework\Message\ManagerInterfaceцьому</b> є додатковий набір методів, які всі включають в своє ім'я частку Complex:</p>
+      <div class="code">
+        <code>
+          <span style="color: #0000BB"><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexSuccessMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span><br><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexErrorMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span><br><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexWarningMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span><br><span style="color: #007700">public</span> <span style="color: #007700">function</span> addComplexNoticeMessage<span style="color: #007700">(</span>$ident<span style="color: #007700">if</span>ier<span style="color: #007700">,</span> array $data = <span style="color: #007700">[</span><span style="color: #007700">]</span><span style="color: #007700">,</span> $group = null<span style="color: #007700">)</span><span style="color: #007700">;</span></span>
+        </code>
+      </div>
+      <p>
+        Для їх використання нам спочатку потрібно встановити власний ідентифікатор за допомогою деяких інструкцій di.xml:
+      </p>
+      <h2><a href="https://store.fooman.co.nz/blog/displaying-complex-error-messages-in-magento-2.html">Поги цей пост не закінчений. Детальніше про це можна прочитати за цією лінкою)</a></h2>
+    </div>
+  </div>
+</div></div>
+<script>
+  $('#content > .section').each(function(i,elem) {
+    var sectionId = 'section-'+i;
+    var sectionHeader = $(this).children('.header').children('h2').text();
+    var navigationItem = '<li><a href="#' + sectionId + '">' + sectionHeader + '</a></li>';
+
+    $(this).attr('id', sectionId);
+    $('#left-sidebar .navigation ul').append(navigationItem);
+  });
+
+  function copytext(el) {
+    var $tmp = $("<textarea>");
+    $("body").append($tmp);
+    $tmp.val($(el).find('textarea.code:first').val()).select();
+    document.execCommand("copy");
+    $tmp.remove();
+
+    $(el).addClass('copy-success');
+    setTimeout(function () {
+      $(el).removeClass('copy-success');
+    },400);
+  }
+
+  $('.left-sidebar .navigation li a').on( 'click', function(){
+    var el = $(this);
+    var dest = el.attr('href');
+    if(dest !== undefined && dest !== '') {
+      $('html').animate({
+                scrollTop: $(dest).offset().top
+              }, 500
+      );
+    }
+    return false;
+  });
+</script>
+</body>
+</html>
